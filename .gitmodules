@@ -1,0 +1,9 @@
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "bundle/onehalf"]
+	path = bundle/onehalf
+	url = git@github.com:sonph/onehalf.git
+[submodule "bundle/Vundle.vim"]
+	path = bundle/Vundle.vim
+	url = git@github.com:VundleVim/Vundle.vim.git
