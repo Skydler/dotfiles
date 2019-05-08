@@ -25,7 +25,6 @@ filetype plugin indent on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-syntax enable
 
 " Theme shit
 colorscheme onehalfdark
@@ -43,12 +42,16 @@ set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 
 " UI Config
-set number	    " show line numbers
+set number	            " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()
+set laststatus=2        " Always display the status bar
+set relativenumber      " Show line number on the current line and relative numbers on the rest
+set title               " Set the window's title, showing the current file name
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c) " Don't ask for now...
 
 " Searching
 set incsearch           " search as characters are entered
@@ -56,3 +59,8 @@ set hlsearch            " highlight matches
 
 " Orivudes tab-completion for all file-related tasks
 set path+=**
+
+" Text rendering options
+set encoding=utf-8
+set linebreak
+syntax enable
