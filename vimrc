@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/nerdtree'
 
 cal vundle#end()
 filetype plugin indent on
@@ -64,3 +65,4 @@ set path+=**
 set encoding=utf-8
 set linebreak
 syntax enable
+
