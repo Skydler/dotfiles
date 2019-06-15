@@ -8,15 +8,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'jiangmiao/auto-pairs'
-
 Plugin 'scrooloose/nerdtree'
-
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'morhetz/gruvbox'
 
 cal vundle#end()
 filetype plugin indent on
@@ -34,8 +31,10 @@ filetype plugin indent on
 
 
 " Theme shit
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+let g:gruvbox_italic=1
+set background=dark
+colorscheme gruvbox
+
 " True Colors
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -51,6 +50,7 @@ set expandtab       " tabs are spaces
 " HTML config
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.html set filetype=htmldjango        " all html files are htmldjango files
 
 " UI Config
 set number	            " show line numbers
@@ -88,3 +88,6 @@ let g:UltiSnipsExpandTrigger       = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
 let g:UltiSnipsListSnippets        = "<c-k>"        "List possible snippets based on current file
+
+" NERDTree config
+map <C-n> :NERDTreeToggle<CR>
