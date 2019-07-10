@@ -13,6 +13,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'w0rp/ale'
+
+" Colorscheme
 Plugin 'morhetz/gruvbox'
 
 cal vundle#end()
@@ -30,7 +33,7 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 
 
-" Theme shit
+" Theme config
 let g:gruvbox_italic=1
 set background=dark
 colorscheme gruvbox
@@ -46,6 +49,11 @@ endif
 set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
+
+" Code folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
 " HTML config
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2
@@ -75,6 +83,14 @@ set path+=**
 set encoding=utf-8
 set linebreak
 syntax enable
+
+" Flagging unnecessary whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " YouCompleteMe config
 let g:ycm_collect_identifiers_from_tags_files = 1   " Let YCM read tags from Ctags file
