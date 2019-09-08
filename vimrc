@@ -32,6 +32,7 @@ filetype plugin indent on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" ================== PLUGINS CONFIGURATION ==================
 
 " Theme config
 let g:gruvbox_italic=1
@@ -44,45 +45,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-
-" Tabs and spaces config
-set tabstop=4       " number of visual spaces per TAB
-set softtabstop=4   " number of spaces in tab when editing
-set expandtab       " tabs are spaces
-
-" Code folding
-set foldmethod=indent
-set foldlevel=99
-nnoremap <space> za
-
-" HTML config
-autocmd FileType html setlocal shiftwidth=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.html set filetype=htmldjango        " all html files are htmldjango files
-
-" UI Config
-set number	            " show line numbers
-set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
-set wildmenu            " visual autocomplete for command menu
-set lazyredraw          " redraw only when we need to.
-set showmatch           " highlight matching [{()
-set laststatus=2        " Always display the status bar
-set relativenumber      " Show line number on the current line and relative numbers on the rest
-set title               " Set the window's title, showing the current file name
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c) " Don't ask for now...
-
-" Searching
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
-
-" Overrides tab-completion for all file-related tasks
-set path+=**
-
-" Text rendering options
-set encoding=utf-8
-set linebreak
-syntax enable
 
 " Flagging unnecessary whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -108,3 +70,57 @@ let g:UltiSnipsListSnippets        = "<c-k>"        "List possible snippets base
 
 " NERDTree config
 map <C-n> :NERDTreeToggle<CR>
+
+" ALE_flake8 config
+let g:ale_python_flake8_options = "--max-line-length=120"
+
+
+" ================== FILE TYPES CONFIGURATION ==================
+
+" HTML
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.html set filetype=htmldjango        " all html files are htmldjango files
+
+
+" ================== VIM CONFIGURATION ==================
+
+" Identation
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
+
+" Code folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
+" UI Config
+set number	            " show line numbers
+set relativenumber      " Show line number on the current line and relative numbers on the rest
+set cursorline          " highlight current line
+set showcmd             " show command in bottom bar
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+
+" Status
+set title               " Set the window's title, showing the current file name
+set laststatus=2        " Always display the status bar
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c) " Don't ask for now...
+
+" Mouse
+set mouse=a             " mouse support for terminal
+
+" Searching
+set incsearch           " search as characters are entered
+set history=200         " history of commands set to 200 lines
+
+" Overrides tab-completion for all file-related tasks
+set path+=**
+
+" Text rendering options
+set encoding=utf-8      " set encoding
+set showmatch           " highlight matching [{()
+set linebreak
+syntax enable
+
