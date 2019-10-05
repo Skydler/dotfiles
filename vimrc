@@ -13,24 +13,21 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
 
 cal vundle#end()
 filetype plugin indent on
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+
+
+
+
+
+
+
 
 " ================== PLUGINS CONFIGURATION ==================
 
@@ -75,6 +72,13 @@ map <C-n> :NERDTreeToggle<CR>
 let g:ale_python_flake8_options = "--max-line-length=120"
 
 
+
+
+
+
+
+
+
 " ================== FILE TYPES CONFIGURATION ==================
 
 " HTML
@@ -82,20 +86,49 @@ autocmd FileType html setlocal shiftwidth=2 softtabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.html set filetype=htmldjango        " all html files are htmldjango files
 
+" JavaScript
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
+
+" CSS
+autocmd FileType css setlocal shiftwidth=2 softtabstop=2
+
+
+
+
+
+
+
+
 
 " ================== VIM CONFIGURATION ==================
 
+" With a map leader it's possible to do extra key combinations
+let mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+set history=200         " history of commands set to 200 lines
+
 " Identation
-set tabstop=4       " number of visual spaces per TAB
-set softtabstop=4   " number of spaces in tab when editing
-set expandtab       " tabs are spaces
+set tabstop=4           " number of visual spaces per TAB
+set shiftwidth=4
+set softtabstop=4       " number of spaces in tab when editing
+set expandtab           " tabs are spaces
+set smarttab
+
+set autoindent
+set smartindent
 
 " Code folding
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-" UI Config
+" UI
 set number	            " show line numbers
 set relativenumber      " Show line number on the current line and relative numbers on the rest
 set cursorline          " highlight current line
@@ -111,9 +144,12 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c) " Don't ask for
 " Mouse
 set mouse=a             " mouse support for terminal
 
-" Searching
+" Search
 set incsearch           " search as characters are entered
-set history=200         " history of commands set to 200 lines
+set ignorecase          " Ignore case when searching
+set smartcase           " Be smart about cases
+set hlsearch            " highlight words matching the search
+nnoremap <silent> <C-l> :<C-u> nohlsearch <CR><C-l>
 
 " Overrides tab-completion for all file-related tasks
 set path+=**
@@ -121,6 +157,13 @@ set path+=**
 " Text rendering options
 set encoding=utf-8      " set encoding
 set showmatch           " highlight matching [{()
-set linebreak
+set linebreak           " Doesn't brake words in the middle on wrap
 syntax enable
 
+" Buffers
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
+set autoread            " Set to auto read when a file is changed from the outside
+set hidden              " A buffer becomes hidden when it is abandoned
+set noswapfile          "Avoids creating a swapfile
