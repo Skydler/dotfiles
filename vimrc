@@ -14,6 +14,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'dense-analysis/ale'
+Plugin 'tpope/vim-commentary'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
@@ -161,9 +162,12 @@ set linebreak           " Doesn't brake words in the middle on wrap
 syntax enable
 
 " Buffers
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
-
 set autoread            " Set to auto read when a file is changed from the outside
 set hidden              " A buffer becomes hidden when it is abandoned
 set noswapfile          "Avoids creating a swapfile
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
+" Quickfix list
+map <leader>j :cn<cr>
+map <leader>k :cp<cr>
