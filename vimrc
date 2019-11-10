@@ -171,3 +171,7 @@ map <leader>h :bprevious<cr>
 " Quickfix list
 map <leader>j :cn<cr>
 map <leader>k :cp<cr>
+
+" Easy system clipboard yank and paste
+map <leader>y "+y
+map <leader>p "+p
