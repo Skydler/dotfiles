@@ -15,6 +15,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
@@ -69,29 +70,6 @@ let g:UltiSnipsListSnippets        = "<c-k>"        "List possible snippets base
 " NERDTree config
 map <C-n> :NERDTreeToggle<CR>
 
-" ALE_flake8 config
-let g:ale_python_flake8_options = "--max-line-length=120"
-
-
-
-
-
-
-
-
-
-" ================== FILE TYPES CONFIGURATION ==================
-
-" HTML
-autocmd FileType html setlocal shiftwidth=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.html set filetype=htmldjango        " all html files are htmldjango files
-
-" JavaScript
-autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
-
-" CSS
-autocmd FileType css setlocal shiftwidth=2 softtabstop=2
 
 
 
@@ -102,6 +80,8 @@ autocmd FileType css setlocal shiftwidth=2 softtabstop=2
 
 
 " ================== VIM CONFIGURATION ==================
+
+set updatetime=100      " recomended by gitgutter plugin
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = ","
@@ -140,7 +120,7 @@ set lazyredraw          " redraw only when we need to.
 " Status
 set title               " Set the window's title, showing the current file name
 set laststatus=2        " Always display the status bar
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c) " Don't ask for now...
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %v) " Don't ask for now...
 
 " Mouse
 set mouse=a             " mouse support for terminal
@@ -157,6 +137,7 @@ set path+=**
 
 " Text rendering options
 set encoding=utf-8      " set encoding
+set fileencoding=utf-8
 set showmatch           " highlight matching [{()
 set linebreak           " Doesn't brake words in the middle on wrap
 syntax enable
