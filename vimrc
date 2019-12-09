@@ -1,75 +1,27 @@
-set nocompatible		"required for VundleVim
-filetype off			"required for VundleVim
-
-"PLUGINS SHOULD BE BETWEEN vundle#begin/end
-
-" set runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/nerdtree'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'dense-analysis/ale'
-Plugin 'tpope/vim-commentary'
-Plugin 'airblade/vim-gitgutter'
-
-" Colorscheme
-Plugin 'morhetz/gruvbox'
-
-cal vundle#end()
-filetype plugin indent on
-
-
-
-
-
-
-
-
-
-" ================== PLUGINS CONFIGURATION ==================
-
-" Theme config
-let g:gruvbox_italic=1
-set background=dark
-colorscheme gruvbox
-
-" True Colors
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
+" Automatic installation of vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Flagging unnecessary whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+call plug#begin('~/.vim/bundle')
 
-" YouCompleteMe config
-let g:ycm_collect_identifiers_from_tags_files = 1   " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1               " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1          " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1                  " Completion in comments
-let g:ycm_complete_in_strings = 1                   " Completion in string
-let g:ycm_autoclose_preview_window_after_insertion = 1 " Closes preview window after user leaves insert mode
+Plug 'junegunn/vim-plug'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdtree'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
 
-" Configuration for UltiSnips
-let g:UltiSnipsExpandTrigger       = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
-let g:UltiSnipsListSnippets        = "<c-k>"        "List possible snippets based on current file
+" Colorscheme
+Plug 'morhetz/gruvbox'
 
-" NERDTree config
-map <C-n> :NERDTreeToggle<CR>
-
+call plug#end()
 
 
 
@@ -80,6 +32,15 @@ map <C-n> :NERDTreeToggle<CR>
 
 
 " ================== VIM CONFIGURATION ==================
+
+
+" Flagging unnecessary whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 set updatetime=100      " recomended by gitgutter plugin
 
@@ -145,14 +106,59 @@ syntax enable
 " Buffers
 set autoread            " Set to auto read when a file is changed from the outside
 set hidden              " A buffer becomes hidden when it is abandoned
-set noswapfile          "Avoids creating a swapfile
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
+set noswapfile          " Avoids creating a swapfile
+nmap <leader>l :bnext<cr>
+nmap <leader>h :bprevious<cr>
 
 " Quickfix list
-map <leader>j :cn<cr>
-map <leader>k :cp<cr>
+nmap <leader>j :cn<cr>
+nmap <leader>k :cp<cr>
 
 " Easy system clipboard yank and paste
-map <leader>y "+y
-map <leader>p "+p
+nmap <leader>y "+y
+nmap <leader>p "+p
+
+
+
+
+
+
+
+" ================== PLUGINS CONFIGURATION ==================
+
+" Theme config
+let g:gruvbox_italic=1
+set background=dark
+colorscheme gruvbox
+
+" True Colors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" YouCompleteMe config
+let g:ycm_collect_identifiers_from_tags_files = 1   " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1               " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1          " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1                  " Completion in comments
+let g:ycm_complete_in_strings = 1                   " Completion in string
+let g:ycm_autoclose_preview_window_after_insertion = 1 " Closes preview window after user leaves insert mode
+nmap <leader>gt :rightbelow vertical YcmCompleter GoTo<cr>
+nmap <leader>gr :YcmCompleter GoToReferences<cr>
+nmap <leader>gp :YcmCompleter GetType<cr>
+nmap <leader>gd :YcmCompleter GetDoc<cr>
+nmap <leader>fi :YcmCompleter FixIt<cr>
+nmap <leader>rr :YcmCompleter RefactorRename
+nmap <leader>oi :YcmCompleter OrganizeImports<cr>
+
+
+" Configuration for UltiSnips
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
+let g:UltiSnipsListSnippets        = "<c-k>"        "List possible snippets based on current file
+
+" NERDTree config
+map <C-n> :NERDTreeToggle<CR>
