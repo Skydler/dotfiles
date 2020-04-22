@@ -67,3 +67,13 @@ syntax enable
 set autoread            " Set to auto read when a file is changed from the outside
 set hidden              " A buffer becomes hidden when it is abandoned
 set noswapfile          " Avoids creating a swapfile
+set clipboard=unnamed
+
+if has('unnamedplus')
+    set clipboard+=unnamedplus
+endif
+
+" Netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_winsize = 25

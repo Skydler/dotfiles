@@ -15,9 +15,11 @@ nmap <leader>h :bprevious<cr>
 nmap <leader>j :cn<cr>
 nmap <leader>k :cp<cr>
 
-" Easy system clipboard yank and paste
-nmap <leader>y "+y
-nmap <leader>p "+p
-
 " :W sudo saves the file (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
+
+" Fast execute current file
+nnoremap <leader>e :!"%:p"<cr>
+
+" Toggle Nerdtree
+nmap <C-n> :Lexplore<cr>
