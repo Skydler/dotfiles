@@ -30,4 +30,5 @@ alias va='source ./env/bin/activate'
 # Git
 alias gs='git status'
 alias gl='git lg'
-
+alias gd='git diff'
+alias gdc='git diff --cached'
