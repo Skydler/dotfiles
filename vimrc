@@ -12,9 +12,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-set updatetime=300      " recomended by gitgutter plugin
-
-
 set history=200         " history of commands set to 200 lines
 
 " Identation
@@ -23,7 +20,6 @@ set shiftwidth=4
 set softtabstop=4       " number of spaces in tab when editing
 set expandtab           " tabs are spaces
 set smarttab
-
 set autoindent
 set smartindent
 

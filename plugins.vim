@@ -41,3 +41,6 @@ let g:UltiSnipsExpandTrigger       = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
 let g:UltiSnipsListSnippets        = "<c-k>"        "List possible snippets based on current file
+
+" Polyglot
+let g:python_highlight_space_errors = 0
