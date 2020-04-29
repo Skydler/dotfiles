@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# If sensible_bash file source it
+if [ -f ~/.sensible.bash ]; then
+   source ~/.sensible.bash
+fi
+
+set colored-stats on
+
+# General
+alias op='xdg-open'
+complete -o default op
+
+# Env
+alias va='source ./env/bin/activate'
+
+# Git
+alias gs='git status'
+alias gl='git lg'
+
