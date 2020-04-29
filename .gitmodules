@@ -1,33 +1,44 @@
+; VIM SUBMODULES
 [submodule ".vim/bundle/auto-pairs"]
 	path = .vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule ".vim/bundle/gruvbox"]
 	path = .vim/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
-; [submodule ".vim/bundle/nerdtree"]
-; 	path = .vim/bundle/nerdtree
-; 	url = https://github.com/scrooloose/nerdtree.git
-; [submodule ".vim/bundle/YouCompleteMe"]
-; 	path = .vim/bundle/YouCompleteMe
-; 	url = https://github.com/Valloric/YouCompleteMe
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
 [submodule ".vim/bundle/vim-snippets"]
 	path = .vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
-; [submodule ".vim/bundle/ale"]
-; 	path = .vim/bundle/ale
-; 	url = https://github.com/w0rp/ale
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-; [submodule ".vim/bundle/vim-gitgutter"]
-; 	path = .vim/bundle/vim-gitgutter
-; 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule ".vim/bundle/vim-plug"]
 	path = .vim/bundle/vim-plug
 	url = https://github.com/junegunn/vim-plug
 [submodule ".vim/bundle/vim-polyglot"]
 	path = .vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+; [submodule ".vim/bundle/vim-gitgutter"]
+; 	path = .vim/bundle/vim-gitgutter
+; 	url = https://github.com/airblade/vim-gitgutter.git
+; [submodule ".vim/bundle/ale"]
+; 	path = .vim/bundle/ale
+; 	url = https://github.com/w0rp/ale
+; [submodule ".vim/bundle/nerdtree"]
+; 	path = .vim/bundle/nerdtree
+; 	url = https://github.com/scrooloose/nerdtree.git
+; [submodule ".vim/bundle/YouCompleteMe"]
+; 	path = .vim/bundle/YouCompleteMe
+; 	url = https://github.com/Valloric/YouCompleteMe
+;
+; 	=================================================================
+;
+; 	BASH PROMPT SUBMODULES
+[submodule ".bash-seafly-prompt"]
+	path = .bash-seafly-prompt
+	url = https://github.com/bluz71/bash-seafly-prompt
+[submodule ".gitstatus"]
+	path = .gitstatus
+	url = https://github.com/romkatv/gitstatus
