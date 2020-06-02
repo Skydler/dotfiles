@@ -13,6 +13,10 @@ if [ -f ~/.sensible.bash ]; then
    source ~/.sensible.bash
 fi
 
+if [ -f ~/.bashrc_profile ]; then
+   source ~/.bashrc_profile
+fi
+
 set colored-stats on
 
 # make less more friendly for non-text input files, see lesspipe(1)
