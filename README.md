@@ -1,4 +1,4 @@
-# Leonel Dotfiles
+# Dotfiles
 
 Hope you catch something new!
 
