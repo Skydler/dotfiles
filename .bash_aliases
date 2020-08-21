@@ -17,8 +17,8 @@ fi
 alias op='xdg-open'
 complete -o default op
 
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 
 alias ll='ls -alhF'
 alias la='ls -A'
