@@ -4,6 +4,13 @@ let mapleader = ","
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/mapping.vim
 
+" Specific nvim config
+if has('nvim')
+    if !empty(glob('$HOME/.vim/nvim.vim'))
+        source $HOME/.vim/nvim.vim
+    endif
+endif
+
 " Flagging unnecessary whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -73,3 +80,4 @@ endif
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
+

@@ -7,12 +7,12 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'junegunn/vim-plug'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
+
 " Plug 'dense-analysis/ale'
 " Plug 'airblade/vim-gitgutter'
 " Plug 'scrooloose/nerdtree'

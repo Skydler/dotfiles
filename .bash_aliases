@@ -26,6 +26,7 @@ alias l='ls -CF'
 
 # Env
 alias va='source ./env/bin/activate'
+alias vd='deactivate'
 
 # Git
 alias gs='git status'
@@ -33,3 +34,8 @@ alias gl='git lg'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gst='git stash'
+
+# Python
+alias py='python3'
+complete -o default py
+
