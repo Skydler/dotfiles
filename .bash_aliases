@@ -41,3 +41,5 @@ alias gst='git stash'
 alias py='python3'
 complete -o default py
 
+# Nvim
+alias vim='nvim'

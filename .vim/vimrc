@@ -6,20 +6,19 @@ source $HOME/.vim/mapping.vim
 
 " Specific nvim config
 if has('nvim')
-    if !empty(glob('$HOME/.vim/nvim.vim'))
-        source $HOME/.vim/nvim.vim
-    endif
+    let g:python3_host_prog='/usr/bin/python3'
 endif
 
 " Flagging unnecessary whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" highlight ExtraWhitespace ctermbg=red guibg=red
+" match ExtraWhitespace /\s\+$/
+" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+" autocmd BufWinLeave * call clearmatches()
 
 set history=200         " history of commands set to 200 lines
+set updatetime=300
 
 " Identation
 set tabstop=4           " number of visual spaces per TAB
@@ -36,7 +35,7 @@ set foldlevel=99
 
 " UI
 set number	            " show line numbers
-set relativenumber      " Show line number on the current line and relative numbers on the rest
+" set relativenumber      " Show line number on the current line and relative numbers on the rest
 set cursorline          " highlight current line
 set showcmd             " show command in bottom bar
 set wildmenu            " visual autocomplete for command menu

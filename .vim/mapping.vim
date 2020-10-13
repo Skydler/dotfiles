@@ -1,6 +1,3 @@
-" Fast saving
-nmap <leader>w :w!<cr>
-
 " Folding shortcut
 nnoremap <space> za
 
@@ -15,11 +12,11 @@ nmap <leader>h :bprevious<cr>
 nmap <leader>j :cn<cr>
 nmap <leader>k :cp<cr>
 
-" :W sudo saves the file (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+" Move between panes
+map <A-j> <C-W>j
+map <A-k> <C-W>k
+map <A-h> <C-W>h
+map <A-l> <C-W>l
 
-" Fast execute current file
-nnoremap <leader>e :!"%:p"<cr>
-
-" Toggle Nerdtree
-nmap <C-n> :Lexplore<cr>
+"NERDTree toggle
+map <C-n> :NERDTreeToggle<CR>

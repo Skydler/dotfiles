@@ -1,0 +1,23 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact",
+        "vue",
+        "json",
+        "python",
+        "rust"
+    ],
+    "eslint.filetypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact"
+    ],
+    "python.pythonPath": "/usr/bin/python3",
+    "python.formatting.autopep8Path": "~/.local/bin/autopep8",
+    "python.linting.flake8Path": "~/.local/bin/flake8"
+}
