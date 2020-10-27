@@ -149,7 +149,3 @@ xnoremap          [fzf-p]gr    "sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=s
 nnoremap <silent> [fzf-p]t     :<C-u>FzfPreviewBufferTags<CR>
 nnoremap <silent> [fzf-p]q     :<C-u>FzfPreviewQuickFix<CR>
 nnoremap <silent> [fzf-p]l     :<C-u>FzfPreviewLocationList<CR>
-
-
-"======NERDTree=======
-

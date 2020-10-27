@@ -9,14 +9,6 @@ if has('nvim')
     let g:python3_host_prog='/usr/bin/python3'
 endif
 
-" Flagging unnecessary whitespace
-" highlight ExtraWhitespace ctermbg=red guibg=red
-" match ExtraWhitespace /\s\+$/
-" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-" autocmd BufWinLeave * call clearmatches()
-
 set history=200         " history of commands set to 200 lines
 set updatetime=300
 
@@ -35,16 +27,16 @@ set foldlevel=99
 
 " UI
 set number	            " show line numbers
-" set relativenumber      " Show line number on the current line and relative numbers on the rest
 set cursorline          " highlight current line
 set showcmd             " show command in bottom bar
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
+set colorcolumn=80      " draw a ruler at 80 chars
 
 " Status
 set title               " Set the window's title, showing the current file name
 set laststatus=2        " Always display the status bar
-set statusline=%f%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %v) " Don't ask for now...
+set statusline=%f%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %v)
 
 " Mouse
 set mouse=a             " mouse support for terminal
@@ -66,7 +58,8 @@ set linebreak           " Doesn't brake words in the middle on wrap
 syntax enable
 
 " Buffers
-set autoread            " Set to auto read when a file is changed from the outside
+set autoread            " Set to auto read when a file is changed from the
+                        " outside
 set hidden              " A buffer becomes hidden when it is abandoned
 set noswapfile          " Avoids creating a swapfile
 set clipboard=unnamed

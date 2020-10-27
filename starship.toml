@@ -20,7 +20,7 @@ style = "green"
 disabled = true
 
 [python]
-format = "[${pyenv_prefix}(\\($virtualenv\\))]($style)"
+format = "[${pyenv_prefix}(\\($virtualenv\\))]($style) "
 
 [nodejs]
 disabled = true
