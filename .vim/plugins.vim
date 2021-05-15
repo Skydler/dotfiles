@@ -13,12 +13,11 @@ Plug 'tpope/vim-commentary'
 
 " Code syntax highlighting and completion
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 
 " Directory search
 Plug 'preservim/nerdtree'
@@ -56,6 +55,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-vetur',
   \ 'coc-rls',
+  \ 'coc-fzf-preview',
   \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -120,32 +120,30 @@ nmap <leader>rn <Plug>(coc-rename)
 command! -nargs=0 Format :call CocAction('format')
 
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-
 
 "=====FZF=======
 
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
 
-nnoremap <silent> [fzf-p]p     :<C-u>FzfPreviewFromResources project_mru git<CR>
-nnoremap <silent> [fzf-p]gs    :<C-u>FzfPreviewGitStatus<CR>
-nnoremap <silent> [fzf-p]ga    :<C-u>FzfPreviewGitActions<CR>
-nnoremap <silent> [fzf-p]b     :<C-u>FzfPreviewBuffers<CR>
-nnoremap <silent> [fzf-p]B     :<C-u>FzfPreviewAllBuffers<CR>
-nnoremap <silent> [fzf-p]o     :<C-u>FzfPreviewFromResources buffer project_mru<CR>
-nnoremap <silent> [fzf-p]<C-o> :<C-u>FzfPreviewJumps<CR>
-nnoremap <silent> [fzf-p]g;    :<C-u>FzfPreviewChanges<CR>
-nnoremap <silent> [fzf-p]/     :<C-u>FzfPreviewLines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
-nnoremap <silent> [fzf-p]*     :<C-u>FzfPreviewLines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          [fzf-p]gr    :<C-u>FzfPreviewProjectGrep<Space>
-xnoremap          [fzf-p]gr    "sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-nnoremap <silent> [fzf-p]t     :<C-u>FzfPreviewBufferTags<CR>
-nnoremap <silent> [fzf-p]q     :<C-u>FzfPreviewQuickFix<CR>
-nnoremap <silent> [fzf-p]l     :<C-u>FzfPreviewLocationList<CR>
+" Files and buffers
+nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru buffer git<CR>
+nnoremap <silent> [fzf-p]d     :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+
+" Vim stuff
+nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+
+" Git
+nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
