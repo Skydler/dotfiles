@@ -23,7 +23,7 @@ if has("nvim")
     " Terminal
     map <leader>t :vs<cr><C-W><C-l>:terminal<cr>
     tnoremap <Esc> <C-\><C-n>
-    tnoremap <A-Esc> <Esc>
+    tnoremap <A-q><Esc> <Esc>
 
     tnoremap <A-j> <C-\><C-n><C-W>j
     tnoremap <A-k> <C-\><C-n><C-W>k
