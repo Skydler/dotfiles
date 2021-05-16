@@ -36,7 +36,17 @@ set colorcolumn=80      " draw a ruler at 80 chars
 " Status
 set title               " Set the window's title, showing the current file name
 set laststatus=2        " Always display the status bar
-set statusline=%f%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %v)
+"statusline setup
+set statusline=%#Visual#
+set statusline+=\ %f       "tail of the filename
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%h      "help file flag
+set statusline+=%w      "preview window flag
+set statusline+=%=      "alignment separator
+set statusline+=%{&ff!='unix'?'['.&ff.']':''} "file format if != unix
+set statusline+=%y      "file type
+set statusline+=\ ‹‹\ %l\/%L:%v\ ›› "coordinates
 
 " Mouse
 set mouse=a             " mouse support for terminal
@@ -55,6 +65,7 @@ set encoding=utf-8      " set encoding
 set fileencoding=utf-8
 set showmatch           " highlight matching [{()
 set linebreak           " Doesn't brake words in the middle on wrap
+set wrap
 syntax enable
 
 " Buffers
