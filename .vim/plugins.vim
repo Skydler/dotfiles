@@ -53,7 +53,7 @@ let g:python_highlight_space_errors = 0
 " Extensions
 let g:coc_global_extensions = [
   \ 'coc-json',
-  \ 'coc-python',
+  \ 'coc-pyright',
   \ 'coc-snippets',
   \ 'coc-html',
   \ 'coc-css',

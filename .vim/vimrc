@@ -31,7 +31,7 @@ set cursorline          " highlight current line
 set showcmd             " show command in bottom bar
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
-set colorcolumn=80      " draw a ruler at 80 chars
+set colorcolumn=88      " draw a ruler at 80 chars
 
 " Status
 set title               " Set the window's title, showing the current file name

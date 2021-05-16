@@ -1,4 +1,5 @@
 {
+    // Coc
     "coc.preferences.formatOnSaveFiletypes": [
         "html",
         "css",
@@ -11,13 +12,17 @@
         "python",
         "rust"
     ],
-    "eslint.filetypes": [
-        "javascript",
-        "typescript",
-        "typescriptreact",
-        "javascriptreact"
+    "coc.preferences.rootPatterns": [
+        ".git",
+        ".hg",
+        ".projections.json",
+        "env"
     ],
-    "python.pythonPath": "/usr/bin/python3",
-    "python.formatting.autopep8Path": "~/.local/bin/autopep8",
-    "python.linting.flake8Path": "~/.local/bin/flake8"
+    // Python
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "~/.local/bin/black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "~/.local/bin/flake8",
+    "python.linting.flake8Args": ["--max-line-length=88"],
+    "python.analysis.typeCheckingMode": "off"
 }
