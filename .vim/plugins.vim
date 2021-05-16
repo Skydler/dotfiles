@@ -10,6 +10,7 @@ call plug#begin('~/.vim/bundle')
 " Text editing
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
+Plug 'psliwka/vim-smoothie'
 
 " Code syntax highlighting and completion
 Plug 'sheerun/vim-polyglot'
@@ -21,15 +22,20 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Directory search
 Plug 'preservim/nerdtree'
+Plug 'mhinz/vim-startify'
 
 " Colorscheme
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
 
 " Theme config
 let g:onedark_terminal_italics=1
+let g:gruvbox_italic=1
+let g:nord_italic=1
 colorscheme onedark
 
 " True Colors
@@ -53,7 +59,6 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-tsserver',
   \ 'coc-eslint',
-  \ 'coc-vetur',
   \ 'coc-rls',
   \ 'coc-fzf-preview',
   \ ]
@@ -147,3 +152,9 @@ nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
 nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
 nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
 nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+
+
+"======STARTIFY======
+
+let g:startify_bookmarks = [ '~/.vim/vimrc', '~/.vim/plugins.vim' ]
+let g:startify_change_to_vcs_root = 1
