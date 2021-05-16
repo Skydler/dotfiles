@@ -24,5 +24,6 @@
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "~/.local/bin/flake8",
     "python.linting.flake8Args": ["--max-line-length=88"],
-    "python.analysis.typeCheckingMode": "off"
+    "python.analysis.typeCheckingMode": "off",
+    "python.pythonPath": "/home/leonel/code/product_manager/PM-Backend/backend/env/bin/python"
 }

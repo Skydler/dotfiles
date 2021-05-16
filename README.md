@@ -2,6 +2,8 @@
 
 Hope you catch something new!
 
+![Example setup](resources/img1.png)
+
 # Installation
 
 ```shell
