@@ -16,11 +16,13 @@ mv ~/.vimrc ~/.vimrc.bak
 mv ~/.config/starship.toml ~/.config/starship.toml.bak
 
 # Creating soft links on home folder
-ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases
-ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.sensible.bash ~/.sensible.bash
-ln -s ~/dotfiles/.vim ~/.vim
+ln -s ~/dotfiles/bash/.bash_aliases ~/.bash_aliases
+ln -s ~/dotfiles/bash/.bashrc ~/.bashrc
+ln -s ~/dotfiles/bash/.sensible.bash ~/.sensible.bash
+ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
+ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
 
 # Remember to install dependencies!
 # Starship

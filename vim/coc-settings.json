@@ -10,7 +10,8 @@
         "vue",
         "json",
         "python",
-        "rust"
+        "rust",
+        "markdown"
     ],
     "coc.preferences.rootPatterns": [
         ".git",
@@ -25,5 +26,5 @@
     "python.linting.flake8Path": "~/.local/bin/flake8",
     "python.linting.flake8Args": ["--max-line-length=88"],
     "python.analysis.typeCheckingMode": "off",
-    "python.pythonPath": "/home/leonel/code/product_manager/PM-Backend/backend/env/bin/python"
+    "python.pythonPath": "/home/leonel/facu/semantica/TP4-Linked-data/env/bin/python"
 }

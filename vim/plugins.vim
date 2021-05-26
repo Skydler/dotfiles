@@ -26,17 +26,18 @@ Plug 'mhinz/vim-startify'
 
 " Colorscheme
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
 
 " Theme config
-let g:onedark_terminal_italics=1
-let g:gruvbox_italic=1
-let g:nord_italic=1
-colorscheme onedark
+let g:onedark_terminal_italics = 1
+let g:gruvbox_filetype_hi_groups = 1
+let g:gruvbox_plugin_hi_groups = 1
+let g:nord_italic = 1
+colorscheme gruvbox8
 
 " True Colors
 if exists('+termguicolors')
