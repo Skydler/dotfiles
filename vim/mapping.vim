@@ -22,6 +22,8 @@ map <A-l> <C-W>l
 if has("nvim")
     " Terminal
     map <leader>t :vs<cr><C-W><C-l>:terminal<cr>
+    map <leader>T :tabnew<cr>:terminal<cr>
+
     tnoremap <Esc> <C-\><C-n>
     tnoremap <A-q><Esc> <Esc>
 
