@@ -25,8 +25,14 @@
   "list.source.files.args": ["--hidden", "--files"],
   "list.source.files.excludePatterns": [
     "**/.git/**",
-    "**/.env/**",
+    "**/env/**",
     "**/node_modules/**"
   ],
-  "list.source.mru.ignoreGitIgnore": true
+  "list.source.grep.excludePatterns": [
+    "**/.git/**",
+    "**/env/**",
+    "**/node_modules/**"
+  ],
+  "list.source.mru.ignoreGitIgnore": true,
+  "list.previewSplitRight": true
 }
