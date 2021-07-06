@@ -1,11 +1,7 @@
 " Automatic installation of vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  " For nvim
-  silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  " For vim
-  "silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-  "  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -39,7 +35,7 @@ let g:onedark_terminal_italics = 1
 let g:gruvbox_filetype_hi_groups = 1
 let g:gruvbox_plugin_hi_groups = 1
 let g:nord_italic = 1
-colorscheme gruvbox8
+colorscheme onedark
 
 " True Colors
 if exists('+termguicolors')

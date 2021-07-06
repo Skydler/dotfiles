@@ -21,6 +21,7 @@
   "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.flake8Args": ["--max-line-length=88"],
   "python.pythonPath": "python",
+  "python.analysis.typeCheckingMode": "off",
   // Lists
   "list.source.files.args": ["--hidden", "--files"],
   "list.source.files.excludePatterns": [
@@ -34,5 +35,11 @@
     "**/node_modules/**"
   ],
   "list.source.mru.ignoreGitIgnore": true,
-  "list.previewSplitRight": true
+  "list.previewSplitRight": true,
+  "list.insertMappings": {
+		"<C-n>": "normal:j",
+		"<C-p>": "normal:k",
+		"<A-n>": "prompt:next",
+		"<A-p>": "prompt:previous"
+  }
 }
