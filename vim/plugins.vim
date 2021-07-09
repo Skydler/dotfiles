@@ -11,7 +11,10 @@ call plug#begin('~/.vim/bundle')
 " Text editing
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'psliwka/vim-smoothie'
+Plug 'ryanoasis/vim-devicons'
 
 " Code syntax highlighting and completion
 Plug 'sheerun/vim-polyglot'
