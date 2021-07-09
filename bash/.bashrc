@@ -41,6 +41,9 @@ fi
 # PROMPT
 eval "$(starship init bash)"
 
+# >>>> Vagrant command completion (start)
+. /opt/vagrant/embedded/gems/2.2.17/gems/vagrant-2.2.17/contrib/bash/completion.sh
+# <<<<  Vagrant command completion (end)
 
 #===================DEFAULT SETTINGS===========================================
 
