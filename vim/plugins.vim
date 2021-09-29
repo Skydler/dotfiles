@@ -55,16 +55,19 @@ let g:python_highlight_space_errors = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = [
   \ 'coc-json',
-  \ 'coc-pyright',
   \ 'coc-snippets',
-  \ 'coc-html',
-  \ 'coc-css',
-  \ 'coc-tsserver',
-  \ 'coc-eslint',
-  \ 'coc-prettier',
   \ 'coc-markdownlint',
   \ 'coc-lists',
   \ ]
+
+" Coc extensions used (this is for me, to remember not global extensions)
+" coc-phpls
+" coc-markdownlint
+" coc-prettier
+" coc-eslint
+" coc-css
+" coc-html
+" coc-pyright
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -127,6 +130,8 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 """""""""
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
+nnoremap <silent> [fzf-p]r     :<C-u>:CocListResume<CR>
+
 " Files and buffers
 nnoremap <silent> [fzf-p]p     :<C-u>CocList files<CR>
 nnoremap <silent> [fzf-p]m     :<C-u>CocList mru<CR>
@@ -137,9 +142,13 @@ nnoremap <silent><Leader>* :exe 'CocList -I --normal --input='.expand('<cword>')
 " Vim stuff
 nnoremap <silent> [fzf-p]q     :<C-u>CocList quickfix<CR>
 nnoremap <silent> [fzf-p]l     :<C-u>CocList locationlist<CR>
+nnoremap <silent> [fzf-p]vc    :<C-u>CocList vimcommands<CR>
 " Coc stuff
 nnoremap <silent> [fzf-p]c     :<C-u>CocList commands<CR>
 nnoremap <silent> [fzf-p]L     :<C-u>CocList lists<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>CocList outline<CR>
+nnoremap          [fzf-p]ok    :<C-u>CocList outline -kind 
+nnoremap <silent> [fzf-p]d     :<C-u>CocList diagnostics<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,3 +157,10 @@ nnoremap <silent> [fzf-p]L     :<C-u>CocList lists<CR>
 
 let g:startify_bookmarks = [ '~/.vim/vimrc', '~/.vim/plugins.vim' ]
 let g:startify_change_to_vcs_root = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           NerdTree                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-b> :NERDTreeToggle<CR>
+nmap <Leader><C-b> :NERDTreeFind<CR>

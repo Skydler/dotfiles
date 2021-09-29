@@ -40,6 +40,3 @@ if has("nvim")
         autocmd TermOpen * :set nonumber norelativenumber
     augroup END
 endif
-
-"NERDTree toggle
-map <C-n> :NERDTreeToggle<CR>
