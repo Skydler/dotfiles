@@ -14,7 +14,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'psliwka/vim-smoothie'
-Plug 'ryanoasis/vim-devicons'
 
 " Code syntax highlighting and completion
 Plug 'sheerun/vim-polyglot'
@@ -25,27 +24,28 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 
-" Colorscheme
-Plug 'joshdick/onedark.vim'
+" Themes
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'arcticicestudio/nord-vim'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'navarasu/onedark.nvim'
 
+" Icons
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " Theme config
-let g:onedark_terminal_italics = 1
+let g:onedark_italic_comment = v:true
 let g:gruvbox_filetype_hi_groups = 1
 let g:gruvbox_plugin_hi_groups = 1
 let g:nord_italic = 1
-colorscheme onedark
 
-" True Colors
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+colorscheme onedark
 
 " Polyglot
 let g:python_highlight_space_errors = 0
@@ -125,9 +125,11 @@ command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImpo
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 
-"""""""""
-"  FZF  "
-"""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               FZF                                     "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
 nnoremap <silent> [fzf-p]r     :<C-u>:CocListResume<CR>
@@ -138,7 +140,7 @@ nnoremap <silent> [fzf-p]m     :<C-u>CocList mru<CR>
 nnoremap <silent> [fzf-p]b     :<C-u>CocList buffers<CR>
 nnoremap <silent> [fzf-p]gr    :<C-u>CocList grep<CR>
 nnoremap <silent> [fzf-p]w     :<C-u>CocList words<CR>
-nnoremap <silent><Leader>* :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
+nnoremap <silent><Leader>*     :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
 " Vim stuff
 nnoremap <silent> [fzf-p]q     :<C-u>CocList quickfix<CR>
 nnoremap <silent> [fzf-p]l     :<C-u>CocList locationlist<CR>

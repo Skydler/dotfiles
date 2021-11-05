@@ -4,7 +4,7 @@ Hope you catch something new!
 
 ![Example setup](resources/img1.png)
 
-# Installation
+## Installation
 
 ```shell
 git clone https://github.com/Skydler/dotfiles.git

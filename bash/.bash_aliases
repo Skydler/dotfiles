@@ -32,7 +32,7 @@ alias vd='deactivate'
 
 # Git
 alias gs='git status'
-alias gl='git lg'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gst='git stash'

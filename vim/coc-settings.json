@@ -1,18 +1,6 @@
 {
   // Coc
-  "coc.preferences.formatOnSaveFiletypes": [
-    "html",
-    "css",
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "vue",
-    "json",
-    "python",
-    "rust",
-    "markdown"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
   "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json", "env"],
   // Python
   "python.formatting.provider": "black",
@@ -37,9 +25,9 @@
   "list.source.mru.ignoreGitIgnore": true,
   "list.previewSplitRight": true,
   "list.insertMappings": {
-		"<C-n>": "normal:j",
-		"<C-p>": "normal:k",
-		"<A-n>": "prompt:next",
-		"<A-p>": "prompt:previous"
+    "<C-n>": "normal:j",
+    "<C-p>": "normal:k",
+    "<A-n>": "prompt:next",
+    "<A-p>": "prompt:previous"
   }
 }
