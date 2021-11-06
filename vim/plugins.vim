@@ -21,18 +21,21 @@ Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Directory search
-Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mhinz/vim-startify'
 
 " Themes
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'arcticicestudio/nord-vim'
-Plug 'bluz71/vim-nightfly-guicolors'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'navarasu/onedark.nvim'
+Plug 'lifepillar/vim-gruvbox8' 
+Plug 'arcticicestudio/nord-vim' 
+Plug 'navarasu/onedark.nvim' 
+Plug 'sainnhe/everforest' 
+Plug 'w0ng/vim-hybrid' 
+Plug 'tyrannicaltoucan/vim-quantum' 
+Plug 'Pocco81/Catppuccino.nvim' 
+Plug 'EdenEast/nightfox.nvim'
 
-" Icons
-Plug 'ryanoasis/vim-devicons'
+" Icons 
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 if (has("termguicolors"))
@@ -56,7 +59,6 @@ let g:python_highlight_space_errors = 0
 let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-snippets',
-  \ 'coc-markdownlint',
   \ 'coc-lists',
   \ ]
 
@@ -162,7 +164,15 @@ let g:startify_change_to_vcs_root = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           NerdTree                                    "
+"                           NvimTree                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-b> :NERDTreeToggle<CR>
-nmap <Leader><C-b> :NERDTreeFind<CR>
+nnoremap <C-b>          :NvimTreeToggle<CR>
+nnoremap <leader><C-b>  :NvimTreeFindFile<CR>
+let g:nvim_tree_disable_window_picker = 1
+let g:nvim_tree_indent_markers = 1
+
+lua << EOF
+require'nvim-tree'.setup {
+    hijack_cursor = true,
+}
+EOF
