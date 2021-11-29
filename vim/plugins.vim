@@ -42,7 +42,10 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" Theme config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           Themes Config                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let g:onedark_italic_comment = v:true
 let g:gruvbox_filetype_hi_groups = 1
 let g:gruvbox_plugin_hi_groups = 1
@@ -53,9 +56,11 @@ colorscheme onedark
 " Polyglot
 let g:python_highlight_space_errors = 0
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           COC-NVIM                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-snippets',
@@ -117,6 +122,8 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Woah sweet outline
+nmap <silent> go :CocOutline<CR>
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -161,7 +168,6 @@ nnoremap <silent> [fzf-p]d     :<C-u>CocList diagnostics<CR>
 
 let g:startify_bookmarks = [ '~/.vim/vimrc', '~/.vim/plugins.vim' ]
 let g:startify_change_to_vcs_root = 1
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           NvimTree                                    "

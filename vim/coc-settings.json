@@ -2,6 +2,11 @@
   // Coc
   "coc.preferences.formatOnSaveFiletypes": ["*"],
   "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json", "env"],
+  "outline.sortBy": "position",
+  "outline.splitCommand": "botright 40vs",
+  "tree.key.toggle": "o",
+  "tree.key.selectPrevious": "<C-p>",
+  "tree.key.selectNext": "<C-n>",
   // Python
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
