@@ -14,6 +14,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'psliwka/vim-smoothie'
+Plug 'lambdalisue/suda.vim'
 
 " Code syntax highlighting and completion
 Plug 'sheerun/vim-polyglot'
@@ -31,7 +32,7 @@ Plug 'navarasu/onedark.nvim'
 Plug 'sainnhe/everforest' 
 Plug 'w0ng/vim-hybrid' 
 Plug 'tyrannicaltoucan/vim-quantum' 
-Plug 'Pocco81/Catppuccino.nvim' 
+Plug 'catppuccin/nvim' 
 Plug 'EdenEast/nightfox.nvim'
 
 " Icons 
@@ -182,3 +183,8 @@ require'nvim-tree'.setup {
     hijack_cursor = true,
 }
 EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                              Suda                                     "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command W SudaWrite
