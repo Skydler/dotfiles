@@ -34,9 +34,12 @@ Plug 'w0ng/vim-hybrid'
 Plug 'tyrannicaltoucan/vim-quantum' 
 Plug 'catppuccin/nvim' 
 Plug 'EdenEast/nightfox.nvim'
+Plug 'marko-cerovac/material.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
-" Icons 
+" Icons
 Plug 'kyazdani42/nvim-web-devicons'
+
 call plug#end()
 
 if (has("termguicolors"))
@@ -51,8 +54,9 @@ let g:onedark_italic_comment = v:true
 let g:gruvbox_filetype_hi_groups = 1
 let g:gruvbox_plugin_hi_groups = 1
 let g:nord_italic = 1
+let g:material_style = 'palenight'
 
-colorscheme onedark
+colorscheme material
 
 " Polyglot
 let g:python_highlight_space_errors = 0
@@ -178,11 +182,11 @@ nnoremap <leader><C-b>  :NvimTreeFindFile<CR>
 let g:nvim_tree_disable_window_picker = 1
 let g:nvim_tree_indent_markers = 1
 
-lua << EOF
-require'nvim-tree'.setup {
+lua << END
+require('nvim-tree').setup {
     hijack_cursor = true,
 }
-EOF
+END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Suda                                     "

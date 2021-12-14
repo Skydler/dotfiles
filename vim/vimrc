@@ -62,7 +62,6 @@ set path+=**
 
 " Text rendering options
 set encoding=utf-8      " set encoding
-set fileencoding=utf-8
 set showmatch           " highlight matching [{()
 set linebreak           " Doesn't brake words in the middle on wrap
 set wrap

@@ -14,6 +14,7 @@ mv ~/.bashrc ~/.bashrc.bak
 mv ~/.vim ~/.vim.bak
 mv ~/.vimrc ~/.vimrc.bak
 mv ~/.config/starship.toml ~/.config/starship.toml.bak
+mv ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.bak
 
 # Creating soft links on home folder
 ln -s ~/dotfiles/bash/.bash_aliases ~/.bash_aliases
@@ -23,6 +24,7 @@ ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -s ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
 # Remember to install dependencies!
 # Starship
@@ -41,4 +43,7 @@ sudo apt-get install -y nodejs
 
 # Coc-Lists support (if you want them quick)
 sudo apt-get install ripgrep
+
+# Kitty terminal
+[Instructions](https://sw.kovidgoyal.net/kitty/binary/)
 ```

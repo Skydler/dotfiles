@@ -43,3 +43,9 @@ complete -o default py
 
 # Nvim
 alias vim='nvim'
+
+# Bat
+alias bat='bat --theme=base16'
+
+# Icat
+alias icat="kitty +kitten icat"
