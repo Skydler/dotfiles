@@ -1,8 +1,8 @@
 " With a map leader it's possible to do extra key combinations
 let mapleader = ","
 
-source $HOME/.vim/plugins.vim
-source $HOME/.vim/mapping.vim
+source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/mapping.vim
 
 " Specific nvim config
 if has('nvim')

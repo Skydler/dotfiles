@@ -1,7 +1,7 @@
 " Automatic installation of vim-plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+let data_dir = '~/.config/nvim/autoload/plug.vim'
+if empty(glob(data_dir))
+  silent execute '!curl -fLo '.data_dir.' --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -171,7 +171,7 @@ nnoremap <silent> [fzf-p]d     :<C-u>CocList diagnostics<CR>
 "                           STARTIFY                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:startify_bookmarks = [ '~/.vim/vimrc', '~/.vim/plugins.vim' ]
+let g:startify_bookmarks = [ '~/.config/nvim/init.vim', '~/.config/nvim/plugins.vim' ]
 let g:startify_change_to_vcs_root = 1
 let g:startify_custom_header = 'startify#pad([
     \ "__/\\\\\\\\\\_____/\\\\\\__/\\\\\\________/\\\\\\__/\\\\\\\\\\\\\\\\\\\\\\__/\\\\\\\\____________/\\\\\\\\_        ",
