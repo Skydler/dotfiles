@@ -41,7 +41,7 @@ eval "$(starship init bash)"
 export VISUAL="nvim"
 
 # >>>> Vagrant command completion (start)
-. /opt/vagrant/embedded/gems/*/gems/vagrant-*/contrib/bash/completion.sh
+# . /opt/vagrant/embedded/gems/*/gems/vagrant-*/contrib/bash/completion.sh
 # <<<<  Vagrant command completion (end)
 
 # Pyenv
