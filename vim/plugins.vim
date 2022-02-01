@@ -20,6 +20,7 @@ Plug 'lambdalisue/suda.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
 
 " Directory search
 Plug 'kyazdani42/nvim-tree.lua'
@@ -32,7 +33,7 @@ Plug 'navarasu/onedark.nvim'
 Plug 'sainnhe/everforest' 
 Plug 'w0ng/vim-hybrid' 
 Plug 'tyrannicaltoucan/vim-quantum' 
-Plug 'catppuccin/nvim' 
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'EdenEast/nightfox.nvim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }

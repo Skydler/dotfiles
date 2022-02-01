@@ -12,8 +12,7 @@
   "python.formatting.blackPath": "~/.local/bin/black",
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",
-  "python.linting.flake8Args": ["--max-line-length=88"],
-  "python.pythonPath": "python",
+  "python.linting.flake8Args": ["--max-line-length=120"],
   "python.analysis.typeCheckingMode": "off",
   // Lists
   "list.source.files.args": ["--hidden", "--files"],
