@@ -2,7 +2,7 @@
 nnoremap <space> za
 
 " ctrl+l to refresh hlsh
-nnoremap <silent> <C-l> :<C-u> nohlsearch <CR><C-l>
+nnoremap <silent> <C-l> :<C-u> nohlsearch <CR>
 
 " Buffer movement
 nmap <leader>l :bnext<cr>

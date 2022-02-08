@@ -26,7 +26,7 @@ set foldmethod=indent
 set foldlevel=99
 
 " UI
-set number	            " show line numbers
+set number	        " show line numbers
 set cursorline          " highlight current line
 set showcmd             " show command in bottom bar
 set wildmenu            " visual autocomplete for command menu
@@ -65,7 +65,6 @@ set encoding=utf-8      " set encoding
 set showmatch           " highlight matching [{()
 set linebreak           " Doesn't brake words in the middle on wrap
 set wrap
-syntax enable
 
 " Buffers
 set autoread            " Set to auto read when a file is changed from the
