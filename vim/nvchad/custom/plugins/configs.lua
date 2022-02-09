@@ -27,4 +27,14 @@ M.nvimtree = {
   },
 }
 
+M.cmp = {
+   sources = {
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+      { name = "buffer", keyword_length = 4},
+      { name = "nvim_lua" },
+      { name = "path" },
+   },
+}
+
 return M

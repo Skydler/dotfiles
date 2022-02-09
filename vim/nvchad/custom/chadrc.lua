@@ -29,6 +29,8 @@ M.plugins = {
 
   default_plugin_config_replace = {
     nvim_tree = plugin_conf.nvimtree,
+    nvim_treesitter = plugin_conf.treesitter,
+    nvim_cmp = plugin_conf.cmp,
   },
 
   install = userPlugins,

@@ -19,7 +19,7 @@ M.setup_lsp = function(attach, capabilities)
    }
 
    -- lspservers with default config
-   local servers = { "html", "cssls", "bashls", "cssmodules_ls", "dockerls", "eslint", "jsonls", "vimls" }
+   local servers = { "html", "cssls", "bashls", "cssmodules_ls", "dockerls", "eslint", "jsonls", "vimls", "intelephense" }
 
    for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
