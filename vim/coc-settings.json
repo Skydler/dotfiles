@@ -1,5 +1,4 @@
 {
-  // Coc
   "coc.preferences.formatOnSaveFiletypes": ["*"],
   "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json", "env"],
   "outline.sortBy": "position",
@@ -7,14 +6,12 @@
   "tree.key.toggle": "o",
   "tree.key.selectPrevious": "<C-p>",
   "tree.key.selectNext": "<C-n>",
-  // Python
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.flake8Args": ["--max-line-length=120"],
   "python.analysis.typeCheckingMode": "off",
-  // Lists
   "list.source.files.args": ["--hidden", "--files"],
   "list.source.files.excludePatterns": [
     "**/.git/**",

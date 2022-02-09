@@ -1,35 +1,37 @@
 local M = {}
 
 M.setup_lsp = function(attach, capabilities)
-   local lspconfig = require "lspconfig"
+  local lspconfig = require "lspconfig"
 
-   lspconfig.tsserver.setup {
+  lspconfig.pyright.setup {
+    settings = {
+      analysis = {
+        typeCheckingMode = "off",
+      },
+    },
+  }
+
+  -- lspservers with default config
+  local servers = {
+    "tsserver", "html", "cssls",
+    "bashls", "cssmodules_ls", "dockerls",
+    "eslint", "jsonls", "vimls",
+    "intelephense", "pyright"
+  }
+
+  for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
       on_attach = function(client, bufnr)
-         client.resolved_capabilities.document_formatting = false
-         vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
+        attach(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
       end,
-   }
-
-   lspconfig.pyright.setup {
-     settings = {
-       analysis = {
-         typeCheckingMode = "off"
-       }
-     }
-   }
-
-   -- lspservers with default config
-   local servers = { "html", "cssls", "bashls", "cssmodules_ls", "dockerls", "eslint", "jsonls", "vimls", "intelephense" }
-
-   for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup {
-         on_attach = attach,
-         capabilities = capabilities,
-         flags = {
-            debounce_text_changes = 150,
-         },
-      }
-   end
+      capabilities = capabilities,
+      flags = {
+        debounce_text_changes = 150,
+      },
+    }
+  end
 end
 
 return M

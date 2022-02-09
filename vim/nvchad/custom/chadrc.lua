@@ -5,6 +5,7 @@ local userPlugins = require "custom.plugins"
 
 M.options = {
    mapleader = ",",
+   tabstop = 2,
 }
 
 M.ui = {
