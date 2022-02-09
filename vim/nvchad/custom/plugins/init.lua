@@ -12,6 +12,7 @@ return {
 
   {
     "simrat39/symbols-outline.nvim",
+    after = "nvim-lspconfig",
     config = function()
       vim.g.symbols_outline = {
         highlight_hovered_item = false,
@@ -50,4 +51,19 @@ return {
     end,
   },
 
+  {
+    "tpope/vim-surround",
+  },
+
+  {
+    "tpope/vim-fugitive",
+  },
+
+  {
+    "lambdalisue/suda.vim", cmd = "SudaWrite"
+  },
+
+  {
+    "github/copilot.vim",
+  },
 }
