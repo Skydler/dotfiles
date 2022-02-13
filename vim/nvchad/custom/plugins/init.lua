@@ -1,24 +1,11 @@
 return {
   {
     "karb94/neoscroll.nvim",
-    opt = true,
     config = function()
       require("neoscroll").setup({
         hide_cursor = false,
         easing_function = "sine",
       })
-    end,
-  },
-
-  {
-    "simrat39/symbols-outline.nvim",
-    after = "nvim-lspconfig",
-    config = function()
-      vim.g.symbols_outline = {
-        highlight_hovered_item = false,
-        auto_preview = false,
-      }
-      require("symbols-outline").setup()
     end,
   },
 

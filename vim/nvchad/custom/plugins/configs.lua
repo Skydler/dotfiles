@@ -16,7 +16,6 @@ M.treesitter = {
       "javascript",
       "html",
       "css",
-      "go",
    },
 }
 
