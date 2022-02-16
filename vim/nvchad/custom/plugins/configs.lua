@@ -36,4 +36,16 @@ M.cmp = {
    },
 }
 
+M.feline = {
+    current_line = {
+       provider = {
+         name = "position", 
+         opts = {
+          padding = true,
+         },
+       },
+       left_sep = " ",
+    }
+}
+
 return M

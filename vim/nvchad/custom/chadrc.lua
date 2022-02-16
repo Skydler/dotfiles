@@ -32,6 +32,7 @@ M.plugins = {
     nvim_tree = plugin_conf.nvimtree,
     nvim_treesitter = plugin_conf.treesitter,
     nvim_cmp = plugin_conf.cmp,
+    feline = plugin_conf.feline,
   },
 
   install = userPlugins,
