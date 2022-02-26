@@ -1515,6 +1515,6 @@ map kitty_mod+alt+l next_layout
 
 
 # BEGIN_KITTY_THEME
-# kanagawabones
+# Gruvbox Material Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
