@@ -16,6 +16,7 @@ M.plugins = {
 
   status = {
     colorizer = true,
+    bufferline = false,
   },
 
   options = {
