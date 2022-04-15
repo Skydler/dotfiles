@@ -47,6 +47,29 @@ M.mappings = {
       moveUp = "<A-k>",
       moveDown = "<A-j>",
    },
+
+   terminal = {
+      -- multiple mappings can be given for esc_termmode, esc_hide_termmode
+
+      -- get out of terminal mode
+      esc_termmode = { "jk" },
+
+      -- get out of terminal mode and hide it
+      esc_hide_termmode = { "JK" },
+      -- show & recover hidden terminal buffers in a telescope picker
+      pick_term = "<leader>tf",
+
+      -- spawn a single terminal and toggle it
+      -- this just works like toggleterm kinda
+      new_horizontal = "",
+      new_vertical = "",
+      new_float = "<leader>ti",
+
+      -- spawn new terminals
+      spawn_horizontal = "<leader>tm",
+      spawn_vertical = "<leader>tv",
+      spawn_window = "<leader>tw",
+   },
 }
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event','cmd' fields)
