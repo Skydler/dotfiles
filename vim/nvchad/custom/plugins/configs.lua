@@ -20,7 +20,6 @@ M.treesitter = {
 }
 
 M.nvimtree = {
-  auto_close = true,
   git = {
      enable = true,
   },
@@ -39,7 +38,7 @@ M.cmp = {
 M.feline = {
     current_line = {
        provider = {
-         name = "position", 
+         name = "position",
          opts = {
           padding = true,
          },

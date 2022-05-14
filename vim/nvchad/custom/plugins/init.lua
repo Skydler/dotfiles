@@ -1,6 +1,5 @@
 return {
-  {
-    "karb94/neoscroll.nvim",
+  ["karb94/neoscroll.nvim"] = {
     config = function()
       require("neoscroll").setup({
         hide_cursor = false,
@@ -9,8 +8,7 @@ return {
     end,
   },
 
-  {
-    "jose-elias-alvarez/null-ls.nvim",
+  ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
@@ -38,19 +36,15 @@ return {
     end,
   },
 
-  {
-    "tpope/vim-surround",
-  },
+  ["tpope/vim-surround"] = {},
 
-  {
-    "tpope/vim-fugitive",
-  },
+  ["tpope/vim-fugitive"] = {},
 
-  {
-    "lambdalisue/suda.vim", cmd = "SudaWrite"
-  },
+  ["lambdalisue/suda.vim"] = { cmd = "SudaWrite" },
 
-  {
-    "github/copilot.vim",
-  },
+  ["github/copilot.vim"] = {},
+
+  ["folke/which-key.nvim"] = {
+    disable = true,
+  }
 }
