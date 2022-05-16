@@ -20,15 +20,27 @@ M.options = {
 }
 
 M.ui = {
-   theme = "onedark",
+  theme = "onedark",
+
+  hl_override = {
+    TabLineFill = {
+       fg = "",
+       bg = ""
+    },
+
+    TabLine = {
+      fg = "",
+      bg = "",
+    },
+
+    TabLineSel = {
+      fg = "green",
+      bg = "grey",
+    },
+  }
 }
 
 M.plugins = {
-
-  status = {
-    colorizer = true,
-    bufferline = false,
-  },
 
   options = {
     lspconfig = {
