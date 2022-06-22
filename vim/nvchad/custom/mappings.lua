@@ -44,8 +44,8 @@ M.general = {
     ["<space>"] = {"za", "Toggle folding"},
     ["<C-l>"] = {"<cmd> nohlsearch <CR>", "Clear screen (kinda)"},
 
-    ["<C-j>"] = {"gt", "Next tab"},
-    ["<C-k>"] = {"gT", "Previos tab"},
+    ["<C-k>"] = {"gt", "Next tab"},
+    ["<C-j>"] = {"gT", "Previos tab"},
   },
 }
 

@@ -20,7 +20,7 @@ M.options = {
 }
 
 M.ui = {
-  theme = "onedark",
+  theme = "gruvchad",
 
   hl_override = {
     TabLineFill = {
@@ -58,7 +58,6 @@ M.plugins = {
     ["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
     ["nvim-treesitter/nvim-treesitter"] = plugin_conf.treesitter,
     ["hrsh7th/nvim-cmp"] = plugin_conf.cmp,
-    ["feline-nvim/feline.nvim"] = plugin_conf.feline,
   },
 
   user = userPlugins,

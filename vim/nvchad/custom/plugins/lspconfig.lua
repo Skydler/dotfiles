@@ -1,7 +1,17 @@
+-- LSP configs
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+
 local M = {}
 
 M.setup_lsp = function(attach, capabilities)
   local lspconfig = require "lspconfig"
+  -- lspservers with default config
+  local servers = {
+    "tsserver", "html", "cssls",
+    "bashls", "cssmodules_ls", "dockerls",
+    "eslint", "jsonls", "vimls",
+    "intelephense", "pyright", "terraformls",
+  }
 
   lspconfig.pyright.setup {
     settings = {
@@ -11,25 +21,10 @@ M.setup_lsp = function(attach, capabilities)
     },
   }
 
-  -- lspservers with default config
-  local servers = {
-    "tsserver", "html", "cssls",
-    "bashls", "cssmodules_ls", "dockerls",
-    "eslint", "jsonls", "vimls",
-    "intelephense", "pyright"
-  }
-
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-      on_attach = function(client, bufnr)
-        attach(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
-      end,
+      on_attach = attach,
       capabilities = capabilities,
-      flags = {
-        debounce_text_changes = 150,
-      },
     }
   end
 end

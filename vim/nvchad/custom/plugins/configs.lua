@@ -21,8 +21,27 @@ M.treesitter = {
 
 M.nvimtree = {
   git = {
-     enable = true,
+     enable = false,
+     ignore = false
   },
+  filesystem_watchers = {
+    enable = true
+  },
+  view = {
+    hide_root_folder = false,
+    adaptive_size = true
+  },
+  renderer = {
+    add_trailing = true,
+    indent_markers = {
+      enable = true
+    }
+  },
+  filters = {
+    custom = {
+       "^.git$"
+    }
+  }
 }
 
 M.cmp = {
@@ -33,18 +52,6 @@ M.cmp = {
       { name = "nvim_lua" },
       { name = "path" },
    },
-}
-
-M.feline = {
-    current_line = {
-       provider = {
-         name = "position",
-         opts = {
-          padding = true,
-         },
-       },
-       left_sep = " ",
-    }
 }
 
 return M
