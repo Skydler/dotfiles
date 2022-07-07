@@ -49,3 +49,5 @@ alias bat='bat --theme=base16'
 
 # Icat
 alias icat="kitty +kitten icat"
+
+alias fd="fdfind"

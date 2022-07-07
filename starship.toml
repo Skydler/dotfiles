@@ -33,3 +33,6 @@ format = "[- $symbol$version]($style) "
 
 [git_branch]
 format = "[$symbol$branch ]($style)"
+
+[aws]
+disabled = true
