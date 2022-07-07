@@ -21,6 +21,11 @@ M.options = {
 
 M.ui = {
   theme = "gruvchad",
+  tabufline = {
+    enabled = true,
+    lazyload = true,
+    override = {},
+  },
 
   hl_override = {
     TabLineFill = {
@@ -50,8 +55,6 @@ M.plugins = {
 
   remove = {
     "max397574/better-escape.nvim",
-    "NvChad/nvterm",
-    "akinsho/bufferline.nvim",
   },
 
   override = {

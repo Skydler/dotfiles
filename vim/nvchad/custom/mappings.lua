@@ -2,16 +2,11 @@ local M = {}
 
 M.disabled = {
   i = {
-    ["<C-h>"] = "",
-    ["<C-l>"] = "",
-    ["<C-j>"] = "",
-    ["<C-k>"] = "",
+    ["<C-b>"] = "",
+    ["<C-e>"] = "",
   },
 
   n = {
-    ["<C-h>"] = "",
-    ["<C-j>"] = "",
-    ["<C-k>"] = "",
     ["<C-s>"] = "",
     ["<C-c>"] = "",
 
@@ -19,43 +14,34 @@ M.disabled = {
     ["<leader>rn"] = "",
     ["<leader>tt"] = "",
 
+    -- lsp rename changed to rn
     ["<leader>ra"] = "",
 
+    -- tabufline
     ["<S-b>"] = "",
-    ["<TAB>"] = "",
-    ["<S-Tab>"] = "",
+
+    -- cycle through tabs
+    ["<leader>tp"] = "",
+    ["<leader>tn"] = "",
   }
 }
 
 M.general = {
-  i = {
-    ["<A-h>"] = { "<C-w>h", "  move left" },
-    ["<A-l>"] = { "<C-w>l", " move right" },
-    ["<A-j>"] = { "<C-w>j", " move down" },
-    ["<A-k>"] = { "<C-w>k", " move up" },
-  },
-
   n = {
-    ["<A-h>"] = { "<C-w>h", " window left" },
-    ["<A-l>"] = { "<C-w>l", " window right" },
-    ["<A-j>"] = { "<C-w>j", " window down" },
-    ["<A-k>"] = { "<C-w>k", " window up" },
-
     ["<space>"] = {"za", "Toggle folding"},
-    ["<C-l>"] = {"<cmd> nohlsearch <CR>", "Clear screen (kinda)"},
 
-    ["<C-k>"] = {"gt", "Next tab"},
-    ["<C-j>"] = {"gT", "Previos tab"},
+    ["<C-e>"] = {"gt", "Next tab"},
+    ["<C-q>"] = {"gT", "Previos tab"},
   },
 }
 
 M.lspconfig = {
   n = {
     ["<leader>rn"] = {
-       function()
-          vim.lsp.buf.rename()
-       end,
-       "   lsp rename",
+      function()
+        require("nvchad.ui.renamer").open()
+      end,
+      "   lsp rename",
     },
   }
 }
