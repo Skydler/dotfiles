@@ -16,13 +16,18 @@ return {
     end,
   },
 
+  ["neovim/nvim-lspconfig"] = {
+      config = function()
+        require "plugins.configs.lspconfig"
+        require "custom.plugins.lspconfig"
+      end,
+  },
+
   ["tpope/vim-surround"] = {},
 
   ["tpope/vim-fugitive"] = {},
 
   ["lambdalisue/suda.vim"] = { cmd = "SudaWrite" },
-
-  ["github/copilot.vim"] = {},
 
   ["folke/which-key.nvim"] = {
     disable = true,

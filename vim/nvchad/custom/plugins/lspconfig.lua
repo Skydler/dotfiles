@@ -4,29 +4,36 @@
 local M = {}
 
 M.setup_lsp = function(attach, capabilities)
-  local lspconfig = require "lspconfig"
-  -- lspservers with default config
-  local servers = {
-    "tsserver", "html", "cssls",
-    "bashls", "cssmodules_ls", "dockerls",
-    "eslint", "jsonls", "vimls",
-    "intelephense", "pyright", "terraformls",
-  }
+	local lspconfig = require("lspconfig")
+	-- lspservers with default config
+	local servers = {
+		-- Web
+		"tsserver",
+		"cssls",
+		"html",
 
-  lspconfig.pyright.setup {
-    settings = {
-      analysis = {
-        typeCheckingMode = "off",
-      },
-    },
-  }
+		-- Rest
+		"bashls",
+		"intelephense",
+		"pyright",
+		"terraformls",
+		"yamlls",
+	}
 
-  for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-      on_attach = attach,
-      capabilities = capabilities,
-    }
-  end
+	lspconfig.pyright.setup({
+		settings = {
+			analysis = {
+				typeCheckingMode = "off",
+			},
+		},
+	})
+
+	for _, lsp in ipairs(servers) do
+		lspconfig[lsp].setup({
+			on_attach = attach,
+			capabilities = capabilities,
+		})
+	end
 end
 
 return M
