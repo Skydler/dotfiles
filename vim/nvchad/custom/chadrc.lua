@@ -1,6 +1,7 @@
 local M = {}
 
 local plugin_conf = require("custom.plugins.configs")
+local mason_packages = require("custom.plugins.mason")
 local userPlugins = require("custom.plugins")
 
 M.options = {}
@@ -35,42 +36,9 @@ M.plugins = {
 		["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
 		["nvim-treesitter/nvim-treesitter"] = plugin_conf.treesitter,
 		["hrsh7th/nvim-cmp"] = plugin_conf.cmp,
-		["NvChad/nvterm"] = {
-			terminals = {
-				type_opts = {
-					float = {
-						relative = "editor",
-						row = 0.1,
-						col = 0.1,
-						width = 0.8,
-						height = 0.7,
-						border = "single",
-					},
-					horizontal = { location = "rightbelow", split_ratio = 0.4 },
-				},
-			},
-		},
-		["NvChad/ui"] = {
-			tabufline = {
-				enabled = false,
-			},
-		},
-		["williamboman/mason.nvim"] = {
-			ensure_installed = {
-				"lua-language-server",
-				"stylua",
-
-				"typescript-language-server",
-				"css-lsp",
-				"html-lsp",
-
-				"bash-language-server",
-				"intelephense",
-				"pyright",
-				"terraform-ls",
-				"yaml-language-server",
-			},
-		},
+		["NvChad/nvterm"] = plugin_conf.nvterm,
+		["NvChad/ui"] = plugin_conf.chadui,
+		["williamboman/mason.nvim"] = mason_packages,
 	},
 
 	user = userPlugins,

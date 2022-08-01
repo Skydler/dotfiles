@@ -5,10 +5,10 @@ local null_ls = require("null-ls")
 local b = null_ls.builtins
 
 local sources = {
+	b.formatting.stylua,
 	b.formatting.black,
 	b.formatting.prettierd,
 	b.formatting.terraform_fmt,
-	b.formatting.stylua,
 
 	b.diagnostics.pylint,
 	b.diagnostics.eslint_d,
