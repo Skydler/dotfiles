@@ -7,7 +7,7 @@ local userPlugins = require("custom.plugins")
 M.options = {}
 
 M.ui = {
-	theme = "doomchad",
+	theme = "onedark",
 	hl_add = {
 		TabLineFill = {
 			fg = "",

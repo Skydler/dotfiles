@@ -14,6 +14,7 @@ M.ensure_installed = {
 	-- Python
 	"pyright",
 	"black",
+	"flake8",
 
 	-- Additionals
 	"bash-language-server",

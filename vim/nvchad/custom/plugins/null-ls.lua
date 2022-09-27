@@ -10,7 +10,9 @@ local sources = {
 	b.formatting.prettierd,
 	b.formatting.terraform_fmt,
 
-	b.diagnostics.pylint,
+	b.diagnostics.flake8.with({
+		extra_args = { "--max-line-length", "120" },
+	}),
 	b.diagnostics.eslint_d,
 	b.diagnostics.hadolint,
 }
