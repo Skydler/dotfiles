@@ -6,10 +6,10 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      JetBrains Mono Regular
-bold_font        JetBrains Mono Bold
-italic_font      JetBrains Mono Italic
-bold_italic_font JetBrains Mono Bold Italic
+font_family      JetBrains Mono Regular Nerd Font Complete
+bold_font        JetBrains Mono Bold Nerd Font Complete
+italic_font      JetBrains Mono Italic Nerd Font Complete
+bold_italic_font JetBrains Mono Bold Italic Nerd Font Complete
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -1106,7 +1106,7 @@ tab_powerline_style slanted
 #: mouse cursor invisible on dual GPU machines. Changing this setting
 #: by reloading the config is not supported.
 
-# linux_display_server auto
+linux_display_server x11
 
 #: Choose between Wayland and X11 backends. By default, an appropriate
 #: backend based on the system state is chosen automatically. Set it
@@ -1515,6 +1515,6 @@ map kitty_mod+alt+l next_layout
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Material Dark Hard
+# kanagawabones
 include current-theme.conf
 # END_KITTY_THEME
