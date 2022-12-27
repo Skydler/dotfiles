@@ -20,6 +20,9 @@ M.treesitter = {
 }
 
 M.nvimtree = {
+	update_focused_file = {
+		enable = false,
+	},
 	git = {
 		enable = false,
 		ignore = false,
@@ -78,6 +81,38 @@ M.nvterm = {
 M.chadui = {
 	tabufline = {
 		enabled = false,
+	},
+	statusline = {
+		separator_style = "round",
+		overriden_modules = function()
+			return require("custom.plugins.statusline")
+		end,
+	},
+}
+
+M.mason = {
+	ensure_installed = {
+		-- Lua
+		"lua-language-server",
+		"stylua",
+
+		-- Web
+		"typescript-language-server",
+		"css-lsp",
+		"html-lsp",
+		"prettierd",
+
+		-- Python
+		"pyright",
+		"black",
+		"flake8",
+
+		-- Additionals
+		"bash-language-server",
+		"intelephense",
+		"terraform-ls",
+		"yaml-language-server",
+		"hadolint",
 	},
 }
 

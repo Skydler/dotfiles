@@ -1,4 +1,15 @@
+local plugin_conf = require("custom.plugins.configs")
+
 return {
+	-- Overrides
+	["kyazdani42/nvim-tree.lua"] = { override_options = plugin_conf.nvimtree },
+	["nvim-treesitter/nvim-treesitter"] = { override_options = plugin_conf.treesitter },
+	["hrsh7th/nvim-cmp"] = { override_options = plugin_conf.cmp },
+	["NvChad/nvterm"] = { override_options = plugin_conf.nvterm },
+	["NvChad/ui"] = { override_options = plugin_conf.chadui },
+	["williamboman/mason.nvim"] = { override_options = plugin_conf.mason },
+
+	-- My packages
 	["karb94/neoscroll.nvim"] = {
 		config = function()
 			require("neoscroll").setup({
@@ -9,7 +20,6 @@ return {
 			})
 		end,
 	},
-
 	["jose-elias-alvarez/null-ls.nvim"] = {
 		after = "nvim-lspconfig",
 		requires = { "nvim-lua/plenary.nvim" },
@@ -17,21 +27,17 @@ return {
 			require("custom.plugins.null-ls").setup()
 		end,
 	},
-
 	["neovim/nvim-lspconfig"] = {
 		config = function()
 			require("plugins.configs.lspconfig")
 			require("custom.plugins.lspconfig")
 		end,
 	},
-
 	["tpope/vim-surround"] = {},
-
 	["tpope/vim-fugitive"] = {},
-
 	["lambdalisue/suda.vim"] = { cmd = "SudaWrite" },
 
-	["folke/which-key.nvim"] = {
-		disable = true,
-	},
+	-- Removed packages
+	["max397574/better-escape.nvim"] = false,
+	["folke/which-key.nvim"] = false,
 }
