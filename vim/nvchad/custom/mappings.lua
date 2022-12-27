@@ -27,6 +27,9 @@ M.disabled = {
 		-- cycle through tabs
 		["<leader>tp"] = "",
 		["<leader>tn"] = "",
+
+		-- telescope git status
+		["<leader>gt"] = "",
 	},
 }
 
@@ -36,6 +39,7 @@ M.general = {
 
 		["<C-e>"] = { "gt", "Next tab" },
 		["<C-q>"] = { "gT", "Previos tab" },
+		["<leader>g"] = { "<cmd> G <CR> <C-w>H" },
 	},
 }
 
@@ -43,7 +47,7 @@ M.lspconfig = {
 	n = {
 		["<leader>rn"] = {
 			function()
-				require("nvchad.ui.renamer").open()
+				require("nvchad_ui.renamer").open()
 			end,
 			"   lsp rename",
 		},
@@ -56,6 +60,12 @@ M.telescope = {
 		["<leader>fc"] = { "<cmd> Telescope commands <CR>", "   List all vim commands" },
 		["<leader>fs"] = { "<cmd> Telescope treesitter <CR>", "   Search by outline in buffer" },
 		["<leader>fl"] = { "<cmd> Telescope <CR>", "List all Telescope lists" },
+	},
+}
+
+M.nvimtree = {
+	n = {
+		["<leader>e"] = { "<cmd> NvimTreeFindFile <CR>", "focus nvimtree" },
 	},
 }
 
