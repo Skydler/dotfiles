@@ -1259,7 +1259,7 @@ map kitty_mod+alt+enter new_window
 #: You can open a new window with the current working directory set to
 #: the working directory of the current window using::
 
-map kitty_mod+enter    launch --cwd=current
+map kitty_mod+enter    new_window_with_cwd
 
 #: You can open a new window that is allowed to control kitty via the
 #: kitty remote control facility by prefixing the command line with @.
@@ -1310,7 +1310,8 @@ map kitty_mod+l neighboring_window right
 
 # map kitty_mod+right next_tab
 # map kitty_mod+left  previous_tab
-map kitty_mod+t     new_tab_with_cwd
+map kitty_mod+t       new_tab_with_cwd
+map kitty_mod+alt+t   new_tab
 # map kitty_mod+q     close_tab
 # map shift+cmd+w     close_os_window
 # map kitty_mod+.     move_tab_forward
@@ -1513,8 +1514,11 @@ map kitty_mod+alt+l next_layout
 
 #: }}}
 
+# PERSONAL MAPPINGS
+map f1 launch --allow-remote-control kitty +kitten broadcast --match-tab state:focused
+
 
 # BEGIN_KITTY_THEME
-# kanagawabones
+# Catppuccin-Macchiato
 include current-theme.conf
 # END_KITTY_THEME

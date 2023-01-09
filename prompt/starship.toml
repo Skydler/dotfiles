@@ -1,0 +1,82 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$docker_context\
+$terraform\
+$python\
+$php\
+$nodejs\
+$aws\
+$cmd_duration $jobs\
+$line_break\
+$character"""
+
+
+[terraform]
+format = '[$symbol$workspace]($style) '
+
+[php]
+format = '[$symbol($version )]($style)'
+
+[aws]
+format = '- [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+symbol = "  "
+
+[docker_context]
+symbol = " "
+format = '[$symbol$context]($style) '
+
+[python]
+symbol = " "
+style = "bold green"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[nodejs]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[username]
+style_user = "bold dimmed blue"
+show_always = false
+
+[fill]
+symbol = " "
+
+[directory]
+style = "bold blue"
+read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "red"
+
+[jobs]
+symbol = " "
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+min_time = 1_000
+format = "- [$duration]($style)"
+style = "yellow"
