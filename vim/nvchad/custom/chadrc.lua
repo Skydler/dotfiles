@@ -19,6 +19,14 @@ M.ui = {
 			fg = "green",
 			bg = "grey",
 		},
+
+		diffAdded = {
+			fg = "green",
+		},
+
+		diffRemoved = {
+			fg = "red",
+		},
 	},
 }
 
