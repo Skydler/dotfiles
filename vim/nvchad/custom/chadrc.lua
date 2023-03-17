@@ -1,36 +1,26 @@
+---@type ChadrcConfig
 local M = {}
+
+local highlights = require("custom.highlights")
 
 M.options = {}
 
 M.ui = {
 	theme = "kanagawa",
-	hl_add = {
-		TabLineFill = {
-			fg = "",
-			bg = "",
-		},
+	hl_override = highlights.override,
+	hl_add = highlights.add,
 
-		TabLine = {
-			fg = "",
-			bg = "",
-		},
+	tabufline = {
+		enabled = false,
+	},
 
-		TabLineSel = {
-			fg = "green",
-			bg = "grey",
-		},
-
-		diffAdded = {
-			fg = "green",
-		},
-
-		diffRemoved = {
-			fg = "red",
-		},
+	statusline = {
+		theme = "default",
+		separator_style = "round",
 	},
 }
 
-M.plugins = require("custom.plugins")
+M.plugins = "custom.plugins"
 M.mappings = require("custom.mappings")
 
 return M

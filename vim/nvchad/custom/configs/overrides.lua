@@ -24,7 +24,7 @@ M.nvimtree = {
 		enable = false,
 	},
 	git = {
-		enable = false,
+		enable = true,
 		ignore = false,
 	},
 	filesystem_watchers = {
@@ -40,6 +40,12 @@ M.nvimtree = {
 		},
 	},
 	renderer = {
+		highlight_git = true,
+		icons = {
+			show = {
+				git = true,
+			},
+		},
 		add_trailing = true,
 		indent_markers = {
 			enable = true,
@@ -54,8 +60,8 @@ M.nvimtree = {
 
 M.cmp = {
 	sources = {
-		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+		{ name = "nvim_lsp" },
 		{ name = "buffer", keyword_length = 4 },
 		{ name = "nvim_lua" },
 		{ name = "path" },
@@ -75,18 +81,6 @@ M.nvterm = {
 			},
 			horizontal = { location = "rightbelow", split_ratio = 0.4 },
 		},
-	},
-}
-
-M.chadui = {
-	tabufline = {
-		enabled = false,
-	},
-	statusline = {
-		separator_style = "round",
-		overriden_modules = function()
-			return require("custom.plugins.statusline")
-		end,
 	},
 }
 

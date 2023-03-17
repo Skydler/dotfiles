@@ -1,3 +1,4 @@
+---@type MappingsTable
 local M = {}
 
 M.disabled = {
@@ -7,29 +8,28 @@ M.disabled = {
 	},
 
 	n = {
+		-- General
 		["<C-s>"] = "",
 		["<C-c>"] = "",
-
-		-- TAB is = to <C-i> in vim
-		["<TAB>"] = "",
-		["<S-TAB>"] = "",
-
+		["<leader>b"] = "",
 		["<leader>n"] = "",
 		["<leader>rn"] = "",
-		["<leader>tt"] = "",
+		["<Esc>"] = "",
 
-		-- lsp rename changed to rn
-		["<leader>ra"] = "",
-
-		-- tabufline
+		-- Tabufline
 		["<S-b>"] = "",
+		["<TAB>"] = "", -- TAB is = to <C-i> in vim
+		["<S-TAB>"] = "",
 
-		-- cycle through tabs
-		["<leader>tp"] = "",
-		["<leader>tn"] = "",
+		-- Lspconfig
+		["<leader>ra"] = "",
 
 		-- telescope git status
 		["<leader>gt"] = "",
+
+		-- WhichKey
+		["<leader>wK"] = "",
+		["<leader>wk"] = "",
 	},
 }
 
@@ -43,14 +43,41 @@ M.general = {
 	},
 }
 
+M.comment = {
+	plugin = true,
+
+	-- toggle comment in both modes
+	n = {
+		["gc"] = {
+			function()
+				require("Comment.api").toggle.linewise.current()
+			end,
+			"toggle comment",
+		},
+	},
+
+	v = {
+		["gc"] = {
+			"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+			"toggle comment",
+		},
+	},
+}
+
 M.lspconfig = {
 	n = {
 		["<leader>rn"] = {
 			function()
 				require("nvchad_ui.renamer").open()
 			end,
-			"   lsp rename",
+			"lsp rename",
 		},
+	},
+}
+
+M.nvimtree = {
+	n = {
+		["<leader>e"] = { "<cmd> NvimTreeFindFile <CR> <cmd> NvimTreeFocus <CR>", "focus nvimtree" },
 	},
 }
 
@@ -60,12 +87,6 @@ M.telescope = {
 		["<leader>fc"] = { "<cmd> Telescope commands <CR>", "   List all vim commands" },
 		["<leader>fs"] = { "<cmd> Telescope treesitter <CR>", "   Search by outline in buffer" },
 		["<leader>fl"] = { "<cmd> Telescope <CR>", "List all Telescope lists" },
-	},
-}
-
-M.nvimtree = {
-	n = {
-		["<leader>e"] = { "<cmd> NvimTreeFindFile <CR>", "focus nvimtree" },
 	},
 }
 

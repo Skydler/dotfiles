@@ -7,4 +7,3 @@ vim.opt.mousemodel = "extend"
 vim.opt.relativenumber = true
 
 vim.cmd("command W SudaWrite")
-nvchad.no_WhichKey_map()
