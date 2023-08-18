@@ -26,3 +26,5 @@ fi
 eval "$(starship init zsh)"
 
 export VISUAL=nvim
+
+eval "$(pyenv init -)"

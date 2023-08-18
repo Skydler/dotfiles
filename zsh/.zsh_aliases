@@ -33,6 +33,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gst='git stash'
+alias gsw='git switch'
 
 # Python
 alias py='python3'
@@ -47,3 +48,5 @@ alias bat='bat --theme=base16'
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
 
+# Note taking
+alias notes="vim ~/Sync/Personal/Notes.md"
