@@ -33,11 +33,6 @@ M.nvimtree = {
 	view = {
 		hide_root_folder = false,
 		adaptive_size = true,
-		mappings = {
-			list = {
-				{ key = "<C-e>", action = "" },
-			},
-		},
 	},
 	renderer = {
 		highlight_git = true,

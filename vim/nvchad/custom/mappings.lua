@@ -14,7 +14,6 @@ M.disabled = {
 		["<leader>b"] = "",
 		["<leader>n"] = "",
 		["<leader>rn"] = "",
-		["<Esc>"] = "",
 
 		-- Tabufline
 		["<S-b>"] = "",
