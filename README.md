@@ -8,6 +8,8 @@ Hope you catch something new!
 
 - Zsh
   - [Ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
+    - [Syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+    - [Autosuggetions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
 - [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 - [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
 - [NvChad](https://nvchad.com/docs/quickstart/install)
