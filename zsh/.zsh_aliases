@@ -50,3 +50,6 @@ alias kssh="kitty +kitten ssh"
 
 # Note taking
 alias notes="vim ~/Sync/Personal/Notes.md"
+
+# Ranger
+alias ranger="source ranger"
