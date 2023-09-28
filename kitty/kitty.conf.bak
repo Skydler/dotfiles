@@ -565,7 +565,7 @@ enable_audio_bell no
 #: values set top, horizontal and bottom. Four values set top, right,
 #: bottom and left.
 
-window_padding_width 0
+window_padding_width 10
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border). A single value sets all four sides. Two values set
@@ -601,6 +601,9 @@ window_padding_width 0
 #: between zero and one, with zero being fully faded).
 
 # hide_window_decorations no
+# hide_window_decorations titlebar-and-corners
+# hide_window_decorations titlebar-only
+hide_window_decorations yes
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only can be used to only hide the titlebar.
@@ -623,7 +626,7 @@ window_padding_width 0
 #: scaled. A value of blank means draw a blank window. A value of size
 #: means show the window size in cells.
 
-# resize_in_steps no
+resize_in_steps yes
 
 #: Resize the OS window in steps as large as the cells, instead of
 #: with the usual pixel accuracy. Combined with an
@@ -1107,7 +1110,7 @@ tab_powerline_style slanted
 #: mouse cursor invisible on dual GPU machines. Changing this setting
 #: by reloading the config is not supported.
 
-linux_display_server x11
+# linux_display_server auto
 
 #: Choose between Wayland and X11 backends. By default, an appropriate
 #: backend based on the system state is chosen automatically. Set it
@@ -1520,6 +1523,6 @@ map f1 launch --allow-remote-control kitty +kitten broadcast --match-tab state:f
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark Hard
+# Space Gray
 include current-theme.conf
 # END_KITTY_THEME
