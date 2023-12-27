@@ -10,7 +10,6 @@ M.disabled = {
 	n = {
 		-- General
 		["<C-s>"] = "",
-		["<C-c>"] = "",
 		["<leader>b"] = "",
 		["<leader>n"] = "",
 		["<leader>rn"] = "",
@@ -36,8 +35,8 @@ M.general = {
 	n = {
 		["<space>"] = { "za", "Toggle folding" },
 
-		["<C-e>"] = { "gt", "Next tab" },
-		["<C-q>"] = { "gT", "Previos tab" },
+		["<C-e>"] = { "<cmd> tabn <CR>", "Next tab" },
+		["<C-q>"] = { "<cmd> tabp", "Previos tab" },
 		["<leader>g"] = { "<cmd> G <CR> <C-w>H" },
 	},
 }

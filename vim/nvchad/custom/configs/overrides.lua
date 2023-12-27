@@ -20,6 +20,11 @@ M.treesitter = {
 }
 
 M.nvimtree = {
+	on_attach = function(bufnr)
+		local api = require("nvim-tree.api")
+		api.config.mappings.default_on_attach(bufnr)
+		vim.keymap.del("n", "<C-e>", { buffer = bufnr })
+	end,
 	update_focused_file = {
 		enable = false,
 	},
@@ -31,7 +36,6 @@ M.nvimtree = {
 		enable = true,
 	},
 	view = {
-		hide_root_folder = false,
 		adaptive_size = true,
 	},
 	renderer = {
@@ -55,8 +59,9 @@ M.nvimtree = {
 
 M.cmp = {
 	sources = {
-		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
+		{ name = "copilot" },
+		{ name = "luasnip" },
 		{ name = "buffer", keyword_length = 4 },
 		{ name = "nvim_lua" },
 		{ name = "path" },
@@ -98,10 +103,20 @@ M.mason = {
 
 		-- Additionals
 		"bash-language-server",
-		"intelephense",
 		"terraform-ls",
 		"yaml-language-server",
 		"hadolint",
+	},
+}
+
+M.copilot = {
+	-- Possible configurable fields can be found on:
+	-- https://github.com/zbirenbaum/copilot.lua#setup-and-configuration
+	suggestion = {
+		enabled = false,
+	},
+	panel = {
+		enabled = false,
 	},
 }
 

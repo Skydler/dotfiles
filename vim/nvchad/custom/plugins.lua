@@ -41,6 +41,14 @@ local plugins = {
 	{
 		"hrsh7th/nvim-cmp",
 		opts = overrides.cmp,
+		dependencies = {
+			{
+				"zbirenbaum/copilot-cmp",
+				config = function()
+					require("copilot_cmp").setup()
+				end,
+			},
+		},
 	},
 
 	{
@@ -77,12 +85,19 @@ local plugins = {
 	},
 
 	{
-		"tpope/vim-surround",
-		event = "BufEnter",
+		"kylechui/nvim-surround",
+		event = "InsertEnter",
 	},
 
 	{
 		"tpope/vim-fugitive",
+		event = "BufEnter",
+	},
+
+	{
+		"zbirenbaum/copilot.lua",
+		event = "InsertEnter",
+		opts = overrides.copilot,
 	},
 
 	{
@@ -92,6 +107,7 @@ local plugins = {
 
 	{
 		"danymat/neogen",
+		enabled = false,
 		cmd = "Neogen",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()

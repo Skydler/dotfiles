@@ -11,17 +11,18 @@ local b = null_ls.builtins
 
 local sources = {
 	b.formatting.stylua,
+	b.formatting.isort,
 	b.formatting.black.with({
 		extra_args = { "--line-length", "120" },
 	}),
 	b.formatting.prettierd,
 	b.formatting.terraform_fmt,
-	b.formatting.gofumpt,
 
 	b.diagnostics.flake8.with({
 		extra_args = { "--max-line-length", "120" },
 	}),
-	b.diagnostics.eslint_d,
+	-- b.diagnostics.eslint_d,
+	-- b.diagnostics.ruff,
 	b.diagnostics.hadolint,
 }
 

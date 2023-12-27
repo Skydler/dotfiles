@@ -9,13 +9,9 @@ local servers = {
 	"tsserver",
 	"cssls",
 	"html",
-	"volar",
-	"tailwindcss",
 
 	"bashls",
-	"intelephense",
 	"pyright",
-	"gopls",
 	"terraformls",
 }
 
@@ -36,16 +32,6 @@ lspconfig["pyright"].setup({
 				autoSearchPaths = true,
 				useLibraryCodeForTypes = true,
 			},
-		},
-	},
-})
-
-lspconfig["volar"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	init_options = {
-		typescript = {
-			tsdk = vim.fn.stdpath("data") .. "/mason/packages/typescript-language-server/node_modules/typescript/lib",
 		},
 	},
 })
