@@ -1,23 +1,43 @@
 ---@type ChadrcConfig
 local M = {}
 
-local highlights = require("custom.highlights")
-
-M.options = {}
-
 M.ui = {
-	theme = "tomorrow_night",
-	hl_override = highlights.override,
-	hl_add = highlights.add,
+  theme = "everblush",
+  hl_override = {},
+  hl_add = {
+    CursorLine = {
+      bg = "statusline_bg",
+    },
 
-	tabufline = {
-		enabled = false,
-	},
+    TabLineFill = {
+      fg = "",
+      bg = "",
+    },
 
-	statusline = {
-		theme = "default",
-		separator_style = "round",
-	},
+    TabLine = {
+      fg = "",
+      bg = "",
+    },
+
+    TabLineSel = {
+      fg = "green",
+      bg = "grey",
+    },
+  },
+  lsp_semantic_tokens = true,
+
+  tabufline = {
+    enabled = false,
+  },
+
+  telescope = {
+    style = "bordered",
+  },
+
+  statusline = {
+    theme = "vscode_colored",
+    separator_style = "default",
+  },
 }
 
 M.plugins = "custom.plugins"
