@@ -1,28 +1,29 @@
 -- LSP configs
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
+local lspconfig = require "lspconfig"
 local servers = {
-  -- Web
-  "cssls",
   "html",
-
-  "omnisharp",
+  "cssls",
   "bashls",
   "terraformls",
 }
 
+-- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
+  lspconfig[lsp].setup {
     on_attach = on_attach,
+    on_init = on_init,
     capabilities = capabilities,
-  })
+  }
 end
 
-lspconfig["pyright"].setup({
+lspconfig["pyright"].setup {
   on_attach = on_attach,
+  on_init = on_init,
   capabilities = capabilities,
   settings = {
     python = {
@@ -33,16 +34,11 @@ lspconfig["pyright"].setup({
       },
     },
   },
-})
+}
 
-lspconfig["omnisharp"].setup({
+lspconfig["tsserver"].setup {
   on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = { "/home/leonel/.local/share/nvim/mason/bin/omnisharp", "--languageserver" },
-})
-
-lspconfig["tsserver"].setup({
-  on_attach = on_attach,
+  on_init = on_init,
   capabilities = capabilities,
   init_options = {
     hostInfo = "neovim",
@@ -50,4 +46,4 @@ lspconfig["tsserver"].setup({
       providePrefixAndSuffixTextForRename = false,
     },
   },
-})
+}
