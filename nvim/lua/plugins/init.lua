@@ -24,11 +24,6 @@ return {
   },
 
   {
-    "folke/which-key.nvim",
-    enabled = false,
-  },
-
-  {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
     opts = function()
@@ -104,12 +99,6 @@ return {
   },
 
   {
-    "laytan/cloak.nvim",
-    event = "VeryLazy",
-    config = true,
-  },
-
-  {
     "kwkarlwang/bufjump.nvim",
     event = "VeryLazy",
   },
@@ -120,5 +109,12 @@ return {
     config = function()
       require "configs.nvim_lint"
     end,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    cmd = { "TodoTelescope", "TodoLocList", "TodoQuickFix" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
   },
 }
