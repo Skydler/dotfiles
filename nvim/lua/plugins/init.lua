@@ -79,12 +79,6 @@ return {
   },
 
   {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
-
-  {
     "nvim-telescope/telescope-fzf-native.nvim",
     dependencies = "nvim-telescope/telescope.nvim",
     build = "make",
@@ -115,6 +109,13 @@ return {
     "folke/todo-comments.nvim",
     cmd = { "TodoTelescope", "TodoLocList", "TodoQuickFix" },
     dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+
+  {
+    "stevearc/oil.nvim",
+    cmd = "Oil",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
   },
 }

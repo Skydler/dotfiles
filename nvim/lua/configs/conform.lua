@@ -13,6 +13,7 @@ local options = {
     json = { { "prettierd", "prettier" } },
     markdown = { { "prettierd", "prettier" } },
     yaml = { { "prettierd", "prettier" } },
+    go = { "gofmt" },
   },
 
   formatters = {

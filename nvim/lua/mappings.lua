@@ -7,8 +7,8 @@ map("n", "<C-q>", "<cmd> tabp <CR>", { desc = "Prev tab" })
 
 -- LSP
 map("n", "<leader>rn", function()
-  require("nvchad.renamer").open()
-end, { desc = "lsp rename" })
+  require "nvchad.lsp.renamer"()
+end, { desc = "LSP NvRenamer" })
 
 -- Telescope
 map("n", "<leader>fr", "<cmd> Telescope resume <CR>", { desc = "   Resume last search" })

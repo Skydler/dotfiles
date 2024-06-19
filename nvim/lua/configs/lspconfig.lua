@@ -10,6 +10,7 @@ local servers = {
   "cssls",
   "bashls",
   "terraformls",
+  "gopls",
 }
 
 -- lsps with default config
