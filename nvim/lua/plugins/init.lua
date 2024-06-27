@@ -86,10 +86,8 @@ return {
 
   {
     "windwp/nvim-ts-autotag",
-    ft = function()
-      local conf = require "nvim-ts-autotag.internal"
-      return conf.tbl_filetypes
-    end,
+    event = "VeryLazy",
+    config = true,
   },
 
   {
@@ -107,6 +105,7 @@ return {
 
   {
     "folke/todo-comments.nvim",
+    event = "VeryLazy",
     cmd = { "TodoTelescope", "TodoLocList", "TodoQuickFix" },
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
