@@ -5,6 +5,15 @@ map("n", "<space>", "za", { desc = "Toggle folding" })
 map("n", "<C-e>", "<cmd> tabn <CR>", { desc = "Next tab" })
 map("n", "<C-q>", "<cmd> tabp <CR>", { desc = "Prev tab" })
 
+local isLspDiagnosticsVisible = true
+map("n", "<leader>dc", function()
+  isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+  vim.diagnostic.config {
+    virtual_text = isLspDiagnosticsVisible,
+  }
+end, { desc = "Toggle diagnostics virtual text" })
+map("n", "<leader>df", "<cmd> lua vim.diagnostic.open_float() <CR>", { desc = "Open float diagnostics" })
+
 -- LSP
 map("n", "<leader>rn", function()
   require "nvchad.lsp.renamer"()

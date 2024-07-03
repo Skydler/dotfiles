@@ -22,6 +22,9 @@ M.ui = {
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
+    TelescopeSelection = {
+      bg = "lightbg",
+    },
   },
   hl_add = {
     CursorLine = {

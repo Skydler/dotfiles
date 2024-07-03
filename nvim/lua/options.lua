@@ -7,5 +7,4 @@ vim.opt.tabstop = 2
 vim.opt.mousemodel = "extend"
 vim.opt.relativenumber = true
 
-
-vim.cmd("command W SudaWrite")
+vim.cmd "command W SudaWrite"
