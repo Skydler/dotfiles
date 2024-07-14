@@ -1,9 +1,6 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "black", "isort" },
-    terraform = { "terraform_fmt" },
-
     css = { { "prettierd", "prettier" } },
     html = { { "prettierd", "prettier" } },
     javascript = { { "prettierd", "prettier" } },
@@ -14,12 +11,6 @@ local options = {
     markdown = { { "prettierd", "prettier" } },
     yaml = { { "prettierd", "prettier" } },
     go = { "gofmt" },
-  },
-
-  formatters = {
-    black = {
-      prepend_args = { "--line-length", "120" },
-    },
   },
 
   format_on_save = {

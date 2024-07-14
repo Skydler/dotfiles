@@ -9,8 +9,8 @@ local servers = {
   "html",
   "cssls",
   "bashls",
-  "terraformls",
   "gopls",
+  "yamlls",
 }
 
 -- lsps with default config
@@ -27,14 +27,28 @@ lspconfig["pyright"].setup {
   on_init = on_init,
   capabilities = capabilities,
   settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
     python = {
       analysis = {
-        typeCheckingMode = "basic",
+        typeCheckingMode = "standard",
         autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
       },
     },
   },
+}
+
+lspconfig["ruff"].setup {
+  on_attach = function(client, _)
+    if client.name == "ruff" then
+      -- Disable hover in favor of Pyright
+      client.server_capabilities.hoverProvider = false
+    end
+  end,
+  on_init = on_init,
+  capabilities = capabilities,
 }
 
 lspconfig["tsserver"].setup {
