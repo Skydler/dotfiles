@@ -1,3 +1,5 @@
+-- This is for documentation purposes and should be installed manually
+
 return {
   ensure_installed = {
     "bash",

@@ -42,6 +42,9 @@ end, { desc = "Previous file jump" })
 -- NvimTree
 map("n", "<leader>e", "<cmd> NvimTreeFindFile <CR> <cmd> NvimTreeFocus <CR>", { desc = "Focus file in tree" })
 
+-- Fugitive
+map("n", "<leader>gl", "<cmd> 0Gclog <CR>", { desc = "Git log current file" })
+
 -----------------------------------------------------------------------------------------------------------
 local nomap = vim.keymap.del
 -- General

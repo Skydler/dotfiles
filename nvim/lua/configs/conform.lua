@@ -1,15 +1,15 @@
-local options = {
+return {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { { "prettierd", "prettier" } },
-    html = { { "prettierd", "prettier" } },
-    javascript = { { "prettierd", "prettier" } },
-    javascriptreact = { { "prettierd", "prettier" } },
-    typescript = { { "prettierd", "prettier" } },
-    typescriptreact = { { "prettierd", "prettier" } },
-    json = { { "prettierd", "prettier" } },
-    markdown = { { "prettierd", "prettier" } },
-    yaml = { { "prettierd", "prettier" } },
+    css = { "prettierd" },
+    html = { "prettierd" },
+    javascript = { "prettierd" },
+    javascriptreact = { "prettierd" },
+    typescript = { "prettierd" },
+    typescriptreact = { "prettierd" },
+    json = { "prettierd" },
+    markdown = { "prettierd" },
+    yaml = { "prettierd" },
     go = { "gofmt" },
   },
 
@@ -19,5 +19,3 @@ local options = {
     lsp_fallback = true,
   },
 }
-
-require("conform").setup(options)

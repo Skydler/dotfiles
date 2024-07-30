@@ -2,9 +2,9 @@ return {
   -- Overrides
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- format on save
+    event = "BufWritePre",
     config = function()
-      require "configs.conform"
+      return require "configs.conform"
     end,
   },
 
@@ -116,5 +116,16 @@ return {
     cmd = "Oil",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      suggestion = {
+        auto_trigger = true,
+      },
+    },
   },
 }
