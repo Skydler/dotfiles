@@ -18,9 +18,6 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = function()
-      return require "configs.mason"
-    end,
   },
 
   {
@@ -33,6 +30,9 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
+    },
     opts = function()
       local conf = require "nvchad.configs.telescope"
       local overrides = require "configs.telescope"

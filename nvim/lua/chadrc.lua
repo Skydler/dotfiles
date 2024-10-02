@@ -4,50 +4,63 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
-  theme = "everblush",
-  tabufline = {
-    enabled = false,
-  },
+M = {
+  base46 = {
+    theme = "everblush",
 
-  telescope = {
-    style = "bordered",
-  },
-
-  statusline = {
-    theme = "vscode_colored",
-    separator_style = "default",
-  },
-
-  hl_override = {
-    Comment = { italic = true },
-    ["@comment"] = { italic = true },
-    TelescopeSelection = {
-      bg = "lightbg",
+    hl_override = {
+      Comment = { italic = true },
+      ["@comment"] = { italic = true },
+      TelescopeSelection = {
+        bg = "lightbg",
+      },
     },
-  },
-  hl_add = {
-    CursorLine = {
-      bg = "statusline_bg",
-    },
+    hl_add = {
+      CursorLine = {
+        bg = "statusline_bg",
+      },
 
-    TabLineFill = {
-      fg = "",
-      bg = "",
-    },
+      TabLineFill = {
+        fg = "",
+        bg = "",
+      },
 
-    TabLine = {
-      fg = "",
-      bg = "",
-    },
+      TabLine = {
+        fg = "",
+        bg = "",
+      },
 
-    TabLineSel = {
-      fg = "green",
-      bg = "grey",
+      TabLineSel = {
+        fg = "green",
+        bg = "grey",
+      },
     },
   },
 
-  lsp_semantic_tokens = true,
+  ui = {
+    tabufline = {
+      enabled = false,
+    },
+
+    cmp = {
+      format_colors = {
+        tailwind = true,
+      },
+    },
+
+    telescope = {
+      style = "bordered",
+    },
+
+    statusline = {
+      theme = "vscode_colored",
+      separator_style = "default",
+    },
+  },
+
+  nvdash = {
+    load_on_startup = true,
+  },
 
   term = {
     float = {

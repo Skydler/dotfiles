@@ -1,40 +1,36 @@
 -- LSP configs
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
-
+local configs = require "nvchad.configs.lspconfig"
 local lspconfig = require "lspconfig"
+
 local servers = {
-  "html",
-  "cssls",
-  "bashls",
-  "gopls",
-  "yamlls",
-}
-
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
-end
-
-lspconfig["pyright"].setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  settings = {
-    pyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = true,
+  html = {},
+  cssls = {},
+  bashls = {},
+  gopls = {},
+  yamlls = {},
+  astro = {},
+  tailwindcss = {},
+  ts_ls = {
+    init_options = {
+      hostInfo = "neovim",
+      preferences = {
+        providePrefixAndSuffixTextForRename = false,
+      },
     },
-    python = {
-      analysis = {
-        typeCheckingMode = "standard",
-        autoSearchPaths = true,
+  },
+
+  pyright = {
+    settings = {
+      pyright = {
+        -- Using Ruff's import organizer
+        disableOrganizeImports = true,
+      },
+      python = {
+        analysis = {
+          typeCheckingMode = "standard",
+          autoSearchPaths = true,
+        },
       },
     },
   },
@@ -47,18 +43,14 @@ lspconfig["ruff"].setup {
       client.server_capabilities.hoverProvider = false
     end
   end,
-  on_init = on_init,
-  capabilities = capabilities,
+  on_init = configs.on_init,
+  capabilities = configs.capabilities,
 }
 
-lspconfig["tsserver"].setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  init_options = {
-    hostInfo = "neovim",
-    preferences = {
-      providePrefixAndSuffixTextForRename = false,
-    },
-  },
-}
+for name, opts in pairs(servers) do
+  opts.on_init = configs.on_init
+  opts.on_attach = configs.on_attach
+  opts.capabilities = configs.capabilities
+
+  lspconfig[name].setup(opts)
+end
