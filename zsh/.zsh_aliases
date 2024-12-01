@@ -54,7 +54,17 @@ alias daily="vim ~/Sync/Personal/Trabajo/Caylent/Engagements/Daylight\ Transport
 
 # Ranger
 alias ranger="source ranger"
-alias ra="source ranger"
+# alias ra="source ranger"
+
+# Yazzi config (sorry but I have ra very ingrained)
+function ra() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Custom routes
 alias web="cd ~/work/caylent/daylight/operations-iol-webapp/"
