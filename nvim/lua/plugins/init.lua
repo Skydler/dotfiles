@@ -1,4 +1,9 @@
 return {
+  -- Disables
+  {
+    "windwp/nvim-autopairs",
+    enabled = false,
+  },
   -- Overrides
   {
     "stevearc/conform.nvim",

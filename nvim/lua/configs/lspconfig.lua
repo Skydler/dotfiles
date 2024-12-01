@@ -1,7 +1,24 @@
 -- LSP configs
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+-- :help lspconfig-all
 local configs = require "nvchad.configs.lspconfig"
 local lspconfig = require "lspconfig"
+
+local function rename_file()
+  local source_file = vim.api.nvim_buf_get_name(0)
+  local target_file
+
+  vim.ui.input({ prompt = "Target : ", completion = "file", default = source_file }, function(input)
+    target_file = input
+  end)
+
+  local params = {
+    command = "_typescript.applyRenameFile",
+    arguments = { { sourceUri = source_file, targetUri = target_file } },
+  }
+
+  vim.lsp.util.rename(source_file, target_file)
+  vim.lsp.buf.execute_command(params)
+end
 
 local servers = {
   html = {},
@@ -11,11 +28,18 @@ local servers = {
   yamlls = {},
   astro = {},
   tailwindcss = {},
+  csharp_ls = {},
   ts_ls = {
     init_options = {
       hostInfo = "neovim",
       preferences = {
         providePrefixAndSuffixTextForRename = false,
+      },
+    },
+    commands = {
+      RenameFile = {
+        rename_file,
+        description = "Rename File",
       },
     },
   },
