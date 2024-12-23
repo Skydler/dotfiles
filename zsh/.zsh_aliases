@@ -52,10 +52,6 @@ alias kssh="kitty +kitten ssh"
 alias notes="vim ~/Sync/Personal/Notes.md"
 alias daily="vim ~/Sync/Personal/Trabajo/Caylent/Engagements/Daylight\ Transports/DA\ Dailys.md"
 
-# Ranger
-alias ranger="source ranger"
-# alias ra="source ranger"
-
 # Yazzi config (sorry but I have ra very ingrained)
 function ra() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

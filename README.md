@@ -17,7 +17,7 @@ Hope you catch something new!
 - [Neovim](https://neovim.io/)
   - python3-neovim
 - [NodeJs](https://nodejs.org/en)
-- [Ranger](https://github.com/ranger/ranger)
+- [Yazi](https://yazi-rs.github.io/docs/installation)
 
 ## Installation
 
@@ -30,5 +30,5 @@ ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -s ~/dotfiles/prompt/starship.toml ~/.config/starship.toml
 ln -s ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/ranger ~/.config/ranger
+ln -s ~/dotfiles/yazi ~/.config/yazi
 ```
