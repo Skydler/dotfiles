@@ -56,8 +56,16 @@ end, { desc = "GitSigns Preview Hunk" })
 map("n", "<leader>gb", function()
   require("gitsigns").blame_line()
 end, { desc = "GitSigns Blame Line" })
+map("n", "<A-[>", function()
+  require("gitsigns").prev_hunk()
+end, { desc = "GitSigns Prev Hunk" })
+map("n", "<A-]>", function()
+  require("gitsigns").next_hunk()
+end, { desc = "GitSigns Next Hunk" })
 
 -----------------------------------------------------------------------------------------------------------
+---                                       Keymaps that are removed                                      ---
+
 local nomap = vim.keymap.del
 -- General
 nomap("n", "<leader>b")
