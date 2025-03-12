@@ -50,7 +50,6 @@ alias kssh="kitty +kitten ssh"
 
 # Note taking
 alias notes="vim ~/Sync/Personal/Notes.md"
-alias daily="vim ~/Sync/Personal/Trabajo/Caylent/Engagements/Daylight\ Transports/DA\ Dailys.md"
 
 # Yazzi config (sorry but I have ra very ingrained)
 function ra() {
@@ -63,5 +62,3 @@ function ra() {
 }
 
 # Custom routes
-alias web="cd ~/work/caylent/daylight/operations-iol-webapp/"
-alias da='cd ~/work/caylent/daylight/DA/operations-dock-auto-forklift-app/'
