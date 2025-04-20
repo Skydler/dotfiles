@@ -14,6 +14,22 @@ M = {
       TelescopeSelection = {
         bg = "lightbg",
       },
+      DiffAdd = {
+        bg = "#2e4b2e",
+        fg = "none",
+      },
+      DiffDelete = {
+        bg = "#4c1e15",
+        fg = "none",
+      },
+      DiffChange = {
+        bg = "#45565c",
+        fg = "none",
+      },
+      DiffText = {
+        bg = "#996d74",
+        fg = "none",
+      },
     },
     hl_add = {
       CursorLine = {
