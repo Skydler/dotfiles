@@ -11,13 +11,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
-  },
-
-  {
-    "williamboman/mason.nvim",
   },
 
   {
@@ -97,18 +92,11 @@ return {
 
   {
     "mfussenegger/nvim-lint",
+    enabled = false,
     event = "VeryLazy",
     config = function()
       require "configs.nvim_lint"
     end,
-  },
-
-  {
-    "folke/todo-comments.nvim",
-    event = "VeryLazy",
-    cmd = { "TodoTelescope", "TodoLocList", "TodoQuickFix" },
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
   },
 
   {

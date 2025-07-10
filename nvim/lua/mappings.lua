@@ -18,6 +18,9 @@ map("n", "<leader>df", "<cmd> lua vim.diagnostic.open_float() <CR>", { desc = "D
 map("n", "<leader>rn", function()
   require "nvchad.lsp.renamer"()
 end, { desc = "NvChad LSP NvRenamer" })
+-- A few more are added here https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+map("n", "gi", vim.lsp.buf.implementation, { desc = "LSP Implementation" })
 
 -- Telescope: General
 map("n", "<leader>fr", "<cmd> Telescope resume <CR>", { desc = "Telsecope Resume last search" })
@@ -27,9 +30,8 @@ map("n", "<leader>fw", "<cmd> Telescope live_grep_args<CR>", { desc = "Telescope
 map("n", "<leader>ma", "<cmd> Telescope marks <CR>", { desc = "Telescope Marks" })
 map("n", "<leader>td", "<cmd> TodoTelescope <CR>", { desc = "Telescope TODOs" })
 -- Telescope: LSP
-map("n", "<leader>lr", "<cmd> Telescope lsp_references <CR>", { desc = "Telescope References" })
-map("n", "<leader>ld", "<cmd> Telescope lsp_definitions <CR>", { desc = "Telescope Definitions" })
-map("n", "<leader>le", "<cmd> Telescope diagnostics <CR>", { desc = "Telescope Diagnostics" })
+map("n", "gr", "<cmd> Telescope lsp_references <CR>", { desc = "Telescope References" })
+map("n", "<leader>ld", "<cmd> Telescope diagnostics <CR>", { desc = "Telescope Diagnostics" })
 map("n", "<leader>ls", "<cmd> Telescope lsp_document_symbols <CR>", { desc = "Telescope Symbols" })
 
 -- Bufjump
