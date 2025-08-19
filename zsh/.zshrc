@@ -97,6 +97,43 @@ export PATH="$PATH:$HOME/go/bin"
 
 eval "$(zoxide init zsh)"
 
+
+
+#### NVM (Node Version Manager) setup
+
+# This is the normal NVM setup, but it can be slow to load.
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# This is a lazy loading setup for NVM, which speeds up shell startup time.
+# It will only load NVM when you actually use it, which is useful if you don't
+lazynvm() {
+  unset -f nvm node npm npx
+  export NVM_DIR=~/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+  if [ -f "$NVM_DIR/bash_completion" ]; then
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+  fi
+}
+
+nvm() {
+  lazynvm 
+  nvm $@
+}
+ 
+node() {
+  lazynvm
+  node $@
+}
+ 
+npm() {
+  lazynvm
+  npm $@
+}
+
+npx() {
+  lazynvm
+  npx $@
+}
