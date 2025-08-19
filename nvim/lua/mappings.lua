@@ -65,6 +65,13 @@ map("n", "<A-]>", function()
   require("gitsigns").next_hunk()
 end, { desc = "GitSigns Next Hunk" })
 
+-- Copilot
+vim.keymap.set("i", "<M-l>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+vim.keymap.set("i", "<M-k>", "<Plug>(copilot-accept-word)", {})
+vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", {})
+vim.keymap.set("i", "<M-[>", "<Plug>(copilot-previous)", {})
+vim.keymap.set("i", "<C-]>", "<Plug>(copilot-dismiss)", {})
+
 -----------------------------------------------------------------------------------------------------------
 ---                                       Keymaps that are removed                                      ---
 

@@ -107,14 +107,12 @@ return {
   },
 
   {
-    "zbirenbaum/copilot.lua",
+    "github/copilot.vim",
     cmd = "Copilot",
     event = "InsertEnter",
-    opts = {
-      suggestion = {
-        auto_trigger = true,
-      },
-    },
+    config = function()
+      vim.g.copilot_no_tab_map = true
+    end,
   },
 
   {
