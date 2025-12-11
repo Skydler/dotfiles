@@ -26,7 +26,7 @@ map("n", "gi", vim.lsp.buf.implementation, { desc = "LSP Implementation" })
 map("n", "<leader>fr", "<cmd> Telescope resume <CR>", { desc = "Telsecope Resume last search" })
 map("n", "<leader>fc", "<cmd> Telescope commands <CR>", { desc = "Telescope List all vim commands" })
 map("n", "<leader>fl", "<cmd> Telescope <CR>", { desc = "Telescope List all Telescope lists" })
-map("n", "<leader>fw", "<cmd> Telescope live_grep_args<CR>", { desc = "Telescope live grep with args" })
+map("n", "<leader>fw", "<cmd> Telescope live_grep<CR>", { desc = "Telescope live grep with args" })
 map("n", "<leader>ma", "<cmd> Telescope marks <CR>", { desc = "Telescope Marks" })
 map("n", "<leader>td", "<cmd> TodoTelescope <CR>", { desc = "Telescope TODOs" })
 -- Telescope: LSP
@@ -44,6 +44,14 @@ end, { desc = "JumpList Previous file jump" })
 
 -- NvimTree
 map("n", "<leader>e", "<cmd> NvimTreeFindFile <CR> <cmd> NvimTreeFocus <CR>", { desc = "NvimTree Focus file in tree" })
+
+-- Oil
+-- map("n", "<leader>e", function()
+--   require("oil").open_float()
+-- end, { desc = "Oil Open current file" })
+-- map("n", "<C-n>", function()
+--   require("oil").toggle_float()
+-- end, { desc = "Oil Open float" })
 
 -- Fugitive
 map("n", "<leader>gl", "<cmd> 0Gclog <CR>", { desc = "Fugitive Git log current file" })
@@ -66,18 +74,17 @@ map("n", "<A-]>", function()
 end, { desc = "GitSigns Next Hunk" })
 
 -- Copilot
-vim.keymap.set("i", "<M-l>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
-vim.keymap.set("i", "<M-k>", "<Plug>(copilot-accept-word)", {})
-vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", {})
-vim.keymap.set("i", "<M-[>", "<Plug>(copilot-previous)", {})
-vim.keymap.set("i", "<C-]>", "<Plug>(copilot-dismiss)", {})
+map("i", "<M-l>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+map("i", "<M-k>", "<Plug>(copilot-accept-word)", {})
+map("i", "<M-]>", "<Plug>(copilot-next)", {})
+map("i", "<M-[>", "<Plug>(copilot-previous)", {})
+map("i", "<C-]>", "<Plug>(copilot-dismiss)", {})
 
 -----------------------------------------------------------------------------------------------------------
 ---                                       Keymaps that are removed                                      ---
 
 local nomap = vim.keymap.del
 -- General
-nomap("n", "<leader>b")
 nomap("n", "<leader>n")
 
 -- Telescope

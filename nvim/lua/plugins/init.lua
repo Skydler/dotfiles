@@ -25,17 +25,18 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = {
-      { "nvim-telescope/telescope-live-grep-args.nvim" },
-    },
     opts = function()
       local conf = require "nvchad.configs.telescope"
       local overrides = require "configs.telescope"
-
-      conf.defaults.vimgrep_arguments = overrides.defaults.vimgrep_arguments
       conf.extensions_list = overrides.extensions_list
       return conf
     end,
+  },
+
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    build = "make",
   },
 
   {
@@ -74,12 +75,6 @@ return {
   },
 
   {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    dependencies = "nvim-telescope/telescope.nvim",
-    build = "make",
-  },
-
-  {
     "windwp/nvim-ts-autotag",
     event = "VeryLazy",
     config = true,
@@ -101,15 +96,17 @@ return {
 
   {
     "stevearc/oil.nvim",
-    cmd = "Oil",
+    lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
+    opts = function()
+      return require "configs.oil"
+    end,
   },
 
   {
     "github/copilot.vim",
     cmd = "Copilot",
-    event = "InsertEnter",
+    event = "VeryLazy",
     config = function()
       vim.g.copilot_no_tab_map = true
     end,

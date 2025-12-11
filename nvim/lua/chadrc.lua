@@ -6,7 +6,7 @@ local M = {}
 
 M = {
   base46 = {
-    theme = "rosepine",
+    theme = "nightfox",
 
     hl_override = {
       Comment = { italic = true },
@@ -75,7 +75,7 @@ M = {
   },
 
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
     buttons = {
       { txt = "  New File", keys = "e", cmd = "ene" },
       { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },

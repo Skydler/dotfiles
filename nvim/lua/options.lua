@@ -5,7 +5,7 @@ vim.opt.foldlevelstart = 99
 vim.opt.swapfile = false
 vim.opt.tabstop = 2
 vim.opt.mousemodel = "extend"
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Don't touch unnamed register when pasting over visual selection
 vim.keymap.set("x", "p", function()
