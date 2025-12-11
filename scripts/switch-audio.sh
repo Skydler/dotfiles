@@ -17,3 +17,4 @@ else
     echo "Switching to speakers..."
     wpctl set-default "$speaker_id"
 fi
+paplay /usr/share/sounds/freedesktop/stereo/message.oga --volume=50000
