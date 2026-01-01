@@ -2,9 +2,13 @@
 
 - Blur my Shell
 - Clipboard Indicator
-- Media Controls
-- Docker
-- Panel scroll
-- Quick settings audio Panel
-- Rounded Window Corners Reborn
+- Auto Move Windows
+- App indicator
+- Fedora Linux Update Indicator
+- Lock Keys
+- Media Progress
+- Quick Lang Switch
+- Quick Settings audio devices hider
+- SoundBar
+- Tiling Shell
 - Vitals
