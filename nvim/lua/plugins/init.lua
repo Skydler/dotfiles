@@ -29,6 +29,7 @@ return {
       local conf = require "nvchad.configs.telescope"
       local overrides = require "configs.telescope"
       conf.extensions_list = overrides.extensions_list
+      conf.pickers = vim.tbl_deep_extend("force", conf.pickers or {}, overrides.pickers or {})
       return conf
     end,
   },
@@ -117,5 +118,15 @@ return {
     ft = "markdown",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     opts = {},
+  },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen" },
+    config = function()
+      dofile(vim.g.base46_cache .. "diffview")
+      require("diffview").setup {
+        enhanced_diff_hl = true,
+      }
+    end,
   },
 }
