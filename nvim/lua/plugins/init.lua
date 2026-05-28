@@ -16,6 +16,34 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+    opts = function()
+      return {
+        install_dir = vim.fn.stdpath "data" .. "/site",
+      }
+    end,
+    config = function(_, opts)
+      local ok, treesitter = pcall(require, "nvim-treesitter")
+      if not ok or treesitter.setup == nil then
+        return
+      end
+
+      treesitter.setup {
+        install_dir = opts.install_dir,
+      }
+
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
+    end,
+  },
+
+  {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
     opts = function()
@@ -77,7 +105,7 @@ return {
 
   {
     "windwp/nvim-ts-autotag",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     config = true,
   },
 
@@ -116,7 +144,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     ft = "markdown",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
   },
   {

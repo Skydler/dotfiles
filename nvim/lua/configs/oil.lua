@@ -1,7 +1,7 @@
 return {
   watch_for_changes = true,
   view_options = {
-    show_hidden_files = true, -- Show hidden files by default
+    show_hidden = true, -- Show hidden files by default
   },
   float = {
     padding = 4,

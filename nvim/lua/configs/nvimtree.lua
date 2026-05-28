@@ -1,7 +1,7 @@
 return {
   on_attach = function(bufnr)
     local api = require "nvim-tree.api"
-    api.config.mappings.default_on_attach(bufnr)
+    api.map.on_attach.default(bufnr)
     vim.keymap.del("n", "<C-e>", { buffer = bufnr })
   end,
   update_focused_file = {
@@ -9,13 +9,9 @@ return {
   },
   git = {
     enable = true,
-    ignore = false,
   },
   filesystem_watchers = {
     enable = true,
-  },
-  view = {
-    adaptive_size = true,
   },
   renderer = {
     highlight_git = true,
@@ -30,6 +26,7 @@ return {
     },
   },
   filters = {
+    git_ignored = false,
     custom = {
       "^.git$",
     },

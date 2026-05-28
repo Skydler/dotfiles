@@ -85,7 +85,7 @@ map("i", "<C-]>", "<Plug>(copilot-dismiss)", {})
 
 local nomap = vim.keymap.del
 -- General
-nomap("n", "<leader>n")
+pcall(nomap, "n", "<leader>n")
 
 -- Telescope
-nomap("n", "<leader>gt")
+pcall(nomap, "n", "<leader>gt")

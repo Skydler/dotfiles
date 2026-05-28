@@ -1,7 +1,7 @@
--- This is for documentation purposes and should be installed manually
+-- Parsers to install manually with :TSInstall.
 
 return {
-  ensure_installed = {
+  parsers = {
     "bash",
     "c",
     "diff",
